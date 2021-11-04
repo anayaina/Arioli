@@ -1,54 +1,93 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
-    <meta charset="UTF-8">
-    <title>Arioli</title>
-    <!-- BOOTSTRAP 4 CDN -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
-        integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
-    <!-- CUSTOM CSS -->
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/principal.css') }}">
+  <title>Menu Desplegable</title>
+  <style type="text/css">
+    * {
+      margin: 0px;
+      padding: 0px;
+    }
+
+    #header {
+      margin: auto;
+      width: 500px;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    ul,
+    ol {
+      list-style: none;
+    }
+
+    .nav>li {
+      float: left;
+    }
+
+    .nav li a {
+      background-color: #000;
+      color: #fff;
+      text-decoration: none;
+      padding: 10px 12px;
+      display: block;
+    }
+
+    .nav li a:hover {
+      background-color: #434343;
+    }
+
+    .nav li ul {
+      display: none;
+      position: absolute;
+      min-width: 140px;
+    }
+
+    .nav li:hover>ul {
+      display: block;
+    }
+
+    .nav li ul li {
+      position: relative;
+    }
+
+    .nav li ul li ul {
+      right: -140px;
+      top: 0px;
+    }
+  </style>
 </head>
 
-<style>
-    /* Cambia el color de fondo de la barra menu 
-    .navbar-custom {
-        background-color: rgb(251, 238, 97);
-    }
-
-    /* Cambia el color letra de la barra menu 
-    .navbar-custom .navbar-brand,
-    .navbar-custom .navbar-text {
-        color: rgb(0, 0, 0);
-    }
-    */
-</style>
-
 <body>
-        <!-- BARRA MENU -->
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <div class="container-fluid">
-              <a class="navbar-brand" href="#">Hola</a>
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDarkDropdown" aria-controls="navbarNavDarkDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-              <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
-                <ul class="navbar-nav">
-                  <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                      Comidas
-                    </a>
-                    <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
-                      <li><a class="dropdown-item" href="#">Action</a></li>
-                      <li><a class="dropdown-item" href="#">Another action</a></li>
-                      <li><a class="dropdown-item" href="#">Something else here</a></li>
-                    </ul>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </nav>
+  <div id="header">
+    <ul class="nav">
+      <li><a href="">Inicio</a></li>
+      <li><a href="">Servicios</a>
+        <ul>
+          <li><a href="">Submenu1</a></li>
+          <li><a href="">Submenu2</a></li>
+          <li><a href="">Submenu3</a></li>
+          <li><a href="">Submenu4</a>
+            <ul>
+              <li><a href="">Submenu1</a></li>
+              <li><a href="">Submenu2</a></li>
+              <li><a href="">Submenu3</a></li>
+              <li><a href="">Submenu4</a></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li><a href="">Acerca de</a>
+        <ul>
+          <li><a href="">Submenu1</a></li>
+          <li><a href="">Submenu2</a></li>
+          <li><a href="">Submenu3</a></li>
+          <li><a href="">Submenu4</a></li>
+        </ul>
+      </li>
+      <li><a href="">Contacto</a></li>
+    </ul>
+  </div>
+</body>
 
-        </body>
 </html>
+
+</HTML>
