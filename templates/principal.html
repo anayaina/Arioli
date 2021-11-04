@@ -1,5 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
     <meta charset="UTF-8">
@@ -12,19 +11,30 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/principal.css') }}">
 </head>
 
-<style>
-    /* Cambia el color de fondo de la barra menu 
-    .navbar-custom {
-        background-color: rgb(251, 238, 97);
+    .nav li a:hover {
+      background-color: rgb(220, 165, 0);
     }
 
-    /* Cambia el color letra de la barra menu 
-    .navbar-custom .navbar-brand,
-    .navbar-custom .navbar-text {
-        color: rgb(0, 0, 0);
+    .nav li ul {
+      display: none;
+      position: absolute;
+      min-width: 140px;
     }
-    */
-</style>
+
+    .nav li:hover>ul {
+      display: block;
+    }
+
+    .nav li ul li {
+      position: relative;
+    }
+
+    .nav li ul li ul {
+      right: -140px;
+      top: 0px;
+    }
+  </style>
+</head>
 
 <body>
         <!-- BARRA MENU -->
@@ -56,4 +66,4 @@
 <script src="{{ url_for('static', filename='js/bootstrap.bundle.js') }}"></script> 
 </body>
 
-</html>
+</HTML>
