@@ -11,38 +11,13 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/principal.css') }}">
 </head>
 
-    .nav li a:hover {
-      background-color: rgb(220, 165, 0);
-    }
-
-    .nav li ul {
-      display: none;
-      position: absolute;
-      min-width: 140px;
-    }
-
-    .nav li:hover>ul {
-      display: block;
-    }
-
-    .nav li ul li {
-      position: relative;
-    }
-
-    .nav li ul li ul {
-      right: -140px;
-      top: 0px;
-    }
-  </style>
-</head>
-
 <body>
-        <!-- BARRA MENU -->
-       
+<!-- BARRA MENU -->       
 <div class="bd-example">
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<nav class="navbar navbar-expand-lg navbar-dark bg-warning">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">Navbar</a>
+    <img src="..." class="rounded float-start" alt="IMAGE">
+    <!--<a class="navbar-brand" href="#">Navbar</a> --> 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDarkDropdown" aria-controls="navbarNavDarkDropdown" aria-expanded="true" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -50,12 +25,22 @@
       <ul class="navbar-nav">
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Dropdown
+            Comida Nacional
           </a>
-          <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
-            <li><a class="dropdown-item" href="#">Action</a></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
+          <ul class="dropdown-menu dropdown-menu-white" aria-labelledby="navbarDarkDropdownMenuLink">
+            <li><a class="dropdown-item" href="#">Sonora</a></li>
+            <li><a class="dropdown-item" href="#">Mexicana</a></li>
+          </ul>
+        </li>
+      </ul>
+      <ul class="navbar-nav">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Comida Internacional
+          </a>
+          <ul class="dropdown-menu dropdown-menu-white" aria-labelledby="navbarDarkDropdownMenuLink">
+            <li><a class="dropdown-item" href="#">----</a></li>
+            <li><a class="dropdown-item" href="#">-----</a></li>
           </ul>
         </li>
       </ul>
