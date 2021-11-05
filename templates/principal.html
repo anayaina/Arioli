@@ -8,95 +8,138 @@
   <script src="js/jquery.min.js"></script>
   <script src="{{ url_for('static', filename='js/bootstrap.bundle.js') }}"></script>
   <!-- CUSTOM CSS -->
-  <link rel="stylesheet" href="css/principal.css">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/principal.css') }}">
 </head>
 
 <body>
   <!-- BARRA MENU -->
-  <div class="bd-example">
-    <nav class="navbar navbar-expand-lg navbar-light bg-warning">
-      <div class="container-fluid">
-        <img src="static/images/logorb.png" class="rounded float-start" alt="IMAGE">
-        <div class="navbar-collapse collapse show" id="navbarNavDarkDropdown">
-          <ul class="navbar-nav">
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" id="navbarDarkDropdownMenuLink" role="button"
-                data-bs-toggle="dropdown" aria-expanded="false">
-                Comida Nacional
-              </a>
-              <ul class="dropdown-menu dropdown-menu-white" aria-labelledby="navbarDarkDropdownMenuLink">
-                <li><a class="dropdown-item" href="#">Sonora</a></li>
-                <li><a class="dropdown-item" href="#">Mexicana</a></li>
-              </ul>
-            </li>
-          </ul>
-          <ul class="navbar-nav">
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" id="navbarDarkDropdownMenuLink" role="button"
-                data-bs-toggle="dropdown" aria-expanded="false">
-                Comida Internacional
-              </a>
-              <ul class="dropdown-menu dropdown-menu-white" aria-labelledby="navbarDarkDropdownMenuLink">
-                <li><a class="dropdown-item" href="#">Argentina</a></li>
-                <li><a class="dropdown-item" href="#">Italiana</a></li>
-                <li><a class="dropdown-item" href="#">China</a></li>
-                <li><a class="dropdown-item" href="#">Japonesa</a></li>
-                <li><a class="dropdown-item" href="#">Tailandesa</a></li>
-              </ul>
-            </li>
-          </ul>
-          <ul class="navbar-nav">
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" id="navbarDarkDropdownMenuLink" role="button"
-                data-bs-toggle="dropdown" aria-expanded="false">
-                Gourmet
-              </a>
-              <ul class="dropdown-menu dropdown-menu-white" aria-labelledby="navbarDarkDropdownMenuLink">
-                <li><a class="dropdown-item" href="#">Respostería Fina</a></li>
-                <li><a class="dropdown-item" href="#">Panadería</a></li>
-              </ul>
-            </li>
-          </ul>
-          <ul class="navbar-nav">
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" id="navbarDarkDropdownMenuLink" role="button"
-                data-bs-toggle="dropdown" aria-expanded="false">
-                Especialidades
-              </a>
-            </li>
-          </ul>
+  <nav class="navbar navbar-expand-lg navbar-light bg-warning bd-example">
+    <div class="container-fluid">
+      <img src="static/images/logorb.png" class="rounded float-start" alt="IMAGE">
+      <div class="navbar-collapse" id="barramenu">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="/mexicana">Comida Mexicana</a>
+          </li>
           <ul class="navbar-nav">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">Nosotros</a>
+              <a class="nav-link active" aria-current="page" href="/internacional">Comidas
+                Internacionales</a>
             </li>
-          </ul>
-        </div>
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="/gourmet">Gourmet</a>
+              </li>
+              <ul class="navbar-nav">
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="/especialidades">Especialidades</a>
+                </li>
+              </ul>
+              <ul class="navbar-nav">
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="/nosotros">Nosotros</a>
+                </li>
+              </ul>
       </div>
-    </nav>
-  </div>
-  <!-- GALERIA FOTOS -->
-  <div class="jumbotron jumbotron-fluid text-center">
-    <div class="container">
-      <br>
-      <h6> Galeria de Fotos </h6>
+      <ul class="navbar-nav justify-content-end">
+        <li class="nav-item">
+          <a class="nav-link active" href="/login">Iniciar Sesión</a>
+        </li>
+      </ul>
     </div>
-  </div>
-  <!-- cuadro pequeño -->
+  </nav>
+  <!-- GALERIA FOTOS 
+    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="static/images/promo4.jpg" class="d-block w-70" alt="promo4">
+            </div>
+            <div class="carousel-item">
+                <img src="static/images/promo2.jpeg" class="d-block w-70" alt="promo2">
+            </div>
+            <div class="carousel-item">
+                <img src="static/images/promo3.jpeg" class="d-block w-70" alt="promo3">
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
+            data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
+            data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+    -->
+
+  <!-- FAVORITOS -->
   <br>
   <div class="card">
-    <div class="text-start">
-      <h5> LOS FAVORITOS DE TODOS </h5>
-    </div>
     <div class="text-center">
-      <h6> Imagenes de fotos productos </h6>
+      <h4><br> LOS FAVORITOS DE TODOS </h4>
+    </div>
+    <div class="row">
+      <div class="col-sm-4">
+        <div class="card text-center">
+          <div class="card-body">
+            <h5 class="card-title">Special title treatment</h5>
+            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+            <a href="#" class="btn btn-danger">Go somewhere</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div class="card text-center">
+          <div class="card-body">
+            <h5 class="card-title">Special title treatment</h5>
+            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+            <a href="#" class="btn btn-danger">Go somewhere</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div class="card text-center">
+          <div class="card-body">
+            <h5 class="card-title">Special title treatment</h5>
+            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+            <a href="#" class="btn btn-danger">Go somewhere</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div class="card text-center">
+          <div class="card-body">
+            <h5 class="card-title">Special title treatment</h5>
+            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+            <a href="#" class="btn btn-danger">Go somewhere</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div class="card text-center">
+          <div class="card-body">
+            <h5 class="card-title">Special title treatment</h5>
+            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+            <a href="#" class="btn btn-danger">Go somewhere</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div class="card text-center">
+          <div class="card-body">
+            <h5 class="card-title">Special title treatment</h5>
+            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+            <a href="#" class="btn btn-danger">Go somewhere</a>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
-
   <!-- BARRA ABAJO -->
   <div class="card-footer bg-warning text-center">
     Copyright 2021
-  </div>
-
   </div>
 
 </body>
