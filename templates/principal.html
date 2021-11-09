@@ -8,7 +8,7 @@
     <script src="js/jquery.min.js"></script>
     <script src="{{ url_for('static', filename='js/bootstrap.bundle.js') }}"></script>
     <!-- CUSTOM CSS -->
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/principal.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='static/css/principal.css') }}">
 </head>
 
 <body>
@@ -37,13 +37,13 @@
                             </ul>
                             <ul class="navbar-nav">
                                 <li class="nav-item">
-                                    <a class="nav-link active" aria-current="page" href="#">Nosotros</a>
+                                    <a class="nav-link active" aria-current="page" href="/nosotros">Nosotros</a>
                                 </li>
                             </ul>
             </div>
             <ul class="navbar-nav justify-content-end">
                 <li class="nav-item">
-                    <a class="nav-link active" href="#">Iniciar Sesión</a>
+                    <a class="nav-link active" href="/login">Iniciar Sesión</a>
                 </li>
             </ul>
         </div>
