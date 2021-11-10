@@ -43,7 +43,42 @@
             </div>
             <ul class="navbar-nav justify-content-end">
                 <li class="nav-item">
-                    <a class="nav-link active" href="/login">Iniciar Sesión</a>
+                    <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#exampleModal"
+                        data-bs-whatever="@mdo">Iniciar Sesión</button>
+                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                        aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">Iniciar Sesión</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <form>
+                                        <div class="mb-3">
+                                            <!-- Usuario -->
+                                            <label class="form-label">Usuario</label><br>
+                                            <input type="text" id="text" class="form-control" name="usuario"
+                                                placeholder="Usuario">
+                                        </div>
+                                        <div class="mb-3">
+                                            <!-- Contraseña -->
+                                            <label class="form-label">Contraseña</label><br>
+                                            <input type="password" id="password" class="form-control" name="password"
+                                                placeholder="Contraseña"><br>
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-light">Light</button>
+                                    <button type="button" class="btn btn-secondary"
+                                        data-bs-dismiss="modal">Cancelar</button>
+                                    <button type="button" class="btn btn-danger">Acceder</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </li>
             </ul>
         </div>
@@ -77,7 +112,8 @@
     <br>
     <div class="card">
         <div class="text-md-center">
-            <h3><br> LOS FAVORITOS DE TODOS </h3> <h4><br> </h4>
+            <h3><br> LOS FAVORITOS DE TODOS </h3>
+            <h4><br> </h4>
         </div>
         <div class="container text-lg-center">
             <div class="row">
