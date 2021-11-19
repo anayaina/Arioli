@@ -29,37 +29,31 @@
             <!-- INICIAR SESION -->
             <ul class="navbar-nav justify-content-end">
                 <li class="nav-item">
-                    <button type="button" class="btn btn-warning btn-lg" data-bs-toggle="modal"
-                        data-bs-target="#exampleModal" data-bs-whatever="@mdo">Iniciar Sesión</button>
-                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
-                        aria-hidden="true">
+                    <button type="button" class="btn btn-warning btn-lg" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">Iniciar Sesión</button>
+                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                         <div class="modal-dialog">
                             <div class="modal-content">
                                 <div class="modal-header">
                                     <h5 class="modal-title" id="exampleModalLabel">Iniciar Sesión</h5>
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                        aria-label="Close"></button>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                 </div>
                                 <div class="modal-body">
                                     <form>
                                         <div class="mb-3">
                                             <!-- Usuario -->
                                             <label class="form-label">Usuario</label><br>
-                                            <input type="text" id="text" class="form-control" name="usuario"
-                                                placeholder="Usuario">
+                                            <input type="text" id="text" class="form-control" name="usuario" placeholder="Usuario">
                                         </div>
                                         <div class="mb-3">
                                             <!-- Contraseña -->
                                             <label class="form-label">Contraseña</label><br>
-                                            <input type="password" id="password" class="form-control" name="password"
-                                                placeholder="Contraseña"><br>
+                                            <input type="password" id="password" class="form-control" name="password" placeholder="Contraseña"><br>
                                         </div>
                                     </form>
                                 </div>
                                 <div class="modal-footer">
                                     <a class="btn btn-light " href="/registro" role="button">Crear una Cuenta</a>
-                                    <button type="button" class="btn btn-secondary"
-                                        data-bs-dismiss="modal">Cancelar</button>
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
                                     <button type="button" class="btn btn-danger">Acceder</button>
                                 </div>
                             </div>
@@ -67,8 +61,7 @@
                     </div>
                 </li>
             </ul>
-
-            <!-- CERRAR SESIÓN  <!-- Cuando el usuario inice sesión, cambiar el botón iniciar esión por este 
+            <!-- CERRAR SESIÓN  <!-- Cuando el usuario inice sesión, cambiar el botón iniciar sesión por este 
             <ul class="navbar-nav justify-content-end">
                 <li class="nav-item">
                     <button type="button" class="btn btn-warning btn-lg" data-bs-toggle="modal"
@@ -78,7 +71,7 @@
             -->
 
             <!-- CARRITO -->
-            <form action="#" method="GET">
+            <form action="/cart" method="GET">
                 <input type="image" src="static/images/cart.png" class="rounded float-start" alt="IMAGE">
             </form>
 
@@ -88,26 +81,25 @@
     <!-- BARRA COMIDAS -->
     <nav class="navbar navbar-expand-lg navbar-light bg-danger">
         <div class="container-fluid justify-content-start">
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="mb-0 h5 nav-link active" aria-current="page" href="#">Comida Mexicana</a>
+                        <a class="mb-0 h5 nav-link active" aria-current="page" href="/mexicana">Comida Mexicana</a>
                     </li>
                     <li class="nav-item">
-                        <a class="mb-0 h5 nav-link active" aria-current="page" href="#">Comida Internacional</a>
+                        <a class="mb-0 h5 nav-link active" aria-current="page" href="/internacional">Comida Internacional</a>
                     </li>
                     <li class="nav-item">
-                        <a class="mb-0 h5 nav-link active" aria-current="page" href="#">Gourmet</a>
+                        <a class="mb-0 h5 nav-link active" aria-current="page" href="/gourmet">Gourmet</a>
                     </li>
                     <li class="nav-item">
-                        <a class="mb-0 h5 nav-link active" aria-current="page" href="#">Especialidades</a>
+                        <a class="mb-0 h5 nav-link active" aria-current="page" href="/especial">Especialidades</a>
                     </li>
                     <li class="nav-item">
-                        <a class="mb-0 h5 nav-link active" aria-current="page" href="#">Nosotros</a>
+                        <a class="mb-0 h5 nav-link active" aria-current="page" href="/nosotros">Nosotros</a>
                     </li>
                 </ul>
             </div>
@@ -127,13 +119,11 @@
                 <img src="static/images/image3.jpeg" class="d-block w-70" alt="promo3">
             </div>
         </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
-            data-bs-slide="prev">
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Previous</span>
         </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
-            data-bs-slide="next">
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Next</span>
         </button>
@@ -143,29 +133,72 @@
     <div class="">
         <div class="text-md-center">
             <h3><br> LOS FAVORITOS DE TODOS </h3>
-            <h4><br> </h4>
+            <h4><br></h4>
         </div>
         <div class="container text-lg-center">
             <div class="row">
                 <div class="col-sm">
-                    <div class="card" style="width: 25rem;">
-                        <img src="..." class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <p class="card-text">ssshsjs</p>
-                            <p class="card-text">$100</p>
-                            <button type="button" class="btn btn-danger">Danger</button>
+                    <div class="" style="width: 18rem;">
+                        <div class="" style="width: 18rem;">
+                            <img class="card-img-top" src="--" alt="....">
+                            <div class="card-body">
+                                <h4 class="card-title">Chorizo de Pollo</h4>
+                                <h6 class="card-text">$150 MXN</h6>
+                                <a href="#" class="btn btn">Ver Detalles</a>
+                                <a href="#" class="btn btn-danger">Agregar al Carrito</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm">
+                    <div class="" style="width: 18rem;">
+                        <div class="" style="width: 18rem;">
+                            <img class="card-img-top" src="--" alt="....">
+                            <div class="card-body">
+                                <h4 class="card-title">Brochetas Yakitori</h4>
+                                <h6 class="card-text">$110 MXN</h6>
+                                <a href="#" class="btn btn">Ver Detalles</a>
+                                <a href="#" class="btn btn-danger">Agregar al Carrito</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm">
+                    <div class="" style="width: 18rem;">
+                        <div class="" style="width: 18rem;">
+                            <img class="card-img-top" src="--" alt="....">
+                            <div class="card-body">
+                                <h4 class="card-title">Coyotas</h4>
+                                <h6 class="card-text">$150 MXN</h6>
+                                <a href="#" class="btn btn">Ver Detalles</a>
+                                <a href="#" class="btn btn-danger">Agregar al Carrito</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm">
+                    <div class="" style="width: 18rem;">
+                        <div class="" style="width: 18rem;">
+                            <img class="card-img-top" src="--" alt="....">
+                            <div class="card-body">
+                                <h4 class="card-title">Tacos de Canasta</h4>
+                                <h6 class="card-text">$130 MXN</h6>
+                                <a href="#" class="btn btn">Ver Detalles</a>
+                                <a href="#" class="btn btn-danger">Agregar al Carrito</a>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
     <br><br>
     <!-- FOOTERS -->
     <footer class="page-footer font-small unique-color-dark">
         <div style="background-color: #ffc107;">
             <div class="container">
-                <div class="row py-4 d-flex align-items-center">
+                <div class="row py-1 d-flex align-items-center">
                     <div class="container text-center text-md-left mt-5">
                         <div class="row mt-3">
                             <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
