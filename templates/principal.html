@@ -26,8 +26,8 @@
             <!-- INICIAR SESION -->
             <ul class="navbar-nav justify-content-end">
                 <li class="nav-item">
-                    <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#exampleModal"
-                        data-bs-whatever="@mdo">Iniciar Sesión</button>
+                    <button type="button" class="btn btn-warning btn-lg" data-bs-toggle="modal"
+                        data-bs-target="#exampleModal" data-bs-whatever="@mdo">Iniciar Sesión</button>
                     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
                         aria-hidden="true">
                         <div class="modal-dialog">
@@ -64,9 +64,10 @@
                     </div>
                 </li>
             </ul>
-            <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                <button class="btn btn-warning me-md-2" type="button">Carrito</button>
-            </div>
+            <!-- CARRITO -->
+            <form action="#" method="GET">
+                <input type="image" src="static/images/cart.png" class="rounded float-start" alt="IMAGE">
+            </form>
         </div>
     </nav>
 
@@ -98,7 +99,6 @@
             </div>
         </div>
     </nav>
-
     <!-- GALERIA FOTOS  -->
     <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner">
@@ -198,7 +198,7 @@
         </div>
     </div>
     <br>
-    <!-- BARRA ABAJO -->
+    <!-- FOOTERS -->
     <footer class="page-footer font-small unique-color-dark">
         <div style="background-color: #ffc107;">
             <div class="container">
@@ -240,4 +240,6 @@
 
 </HTML>
 
-<!--<p><a href="/nosotros" class="text-reset">Nosotros</a></p>
+<form action="/nosotros" method="GET">
+    <input type="image" src="static/images/cart.png" class="rounded float-start" alt="IMAGE">
+</form>
