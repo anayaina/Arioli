@@ -34,6 +34,10 @@ def login():
 def registro():
     return render_template('registro.html')
 
+@app.route('/user')
+def user():
+    return render_template('user.html')
+
 @app.route('/cart')
 def cart():
     return render_template('cart.html')
