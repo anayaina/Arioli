@@ -29,7 +29,7 @@
             <!-- INICIAR SESION -->
             <ul class="navbar-nav justify-content-end">
                 <li class="nav-item">
-                    <button type="button" class="btn btn-warning btn-lg" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">Cuenta</button>
+                    <input type="image" src="static/images/user.png" class="btn btn-warning btn-lg" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo"></button>
                     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                         <div class="modal-dialog">
                             <div class="modal-content">
@@ -53,7 +53,6 @@
                                 </div>
                                 <div class="modal-footer">
                                     <a class="btn btn-light " href="/registro" role="button">Crear una Cuenta</a>
-                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
                                     <button type="button" class="btn btn-danger">Acceder</button>
                                 </div>
                             </div>
@@ -62,10 +61,6 @@
                 </li>
             </ul>
 
-            <!-- INICIAR SESION -->
-            <form action="/cart" method="GET">
-                <input type="image" src="static/images/user.png" class="rounded float-start" alt="IMAGE">
-            </form>
             <!-- CARRITO -->
             <form action="/cart" method="GET">
                 <input type="image" src="static/images/carrito.png" class="rounded float-start" alt="IMAGE">
