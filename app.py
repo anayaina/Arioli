@@ -2,14 +2,21 @@ from flask import Flask, render_template
 
 app = Flask(__name__)
 
-
 @app.route('/')
 def principal():
     return render_template('principal.html')
 
+@app.route('/cart')
+def cart():
+    return render_template('cart.html')
+
 @app.route('/nosotros')
 def nosotros():
     return render_template('nosotros.html')
+
+@app.route('/user')
+def user():
+    return render_template('user.html')
 
 @app.route('/internacional')
 def internacional():
@@ -30,7 +37,6 @@ def mexicana():
 @app.route('/login')
 def login():
     return render_template('login.html')
-
 
 @app.route('/registro')
 def registro():
@@ -63,7 +69,6 @@ def japonesa():
 @app.route('/tailandesa')
 def tailandesa():
     return render_template('tailandesa.html')
-
 
 @app.route('/panaderia')
 def panaderia():

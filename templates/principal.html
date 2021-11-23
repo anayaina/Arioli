@@ -29,7 +29,7 @@
             <!-- INICIAR SESION -->
             <ul class="navbar-nav justify-content-end">
                 <li class="nav-item">
-                    <button type="button" class="btn btn-warning btn-lg" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">Iniciar Sesión</button>
+                    <button type="button" class="btn btn-warning btn-lg" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">Cuenta</button>
                     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                         <div class="modal-dialog">
                             <div class="modal-content">
@@ -61,20 +61,15 @@
                     </div>
                 </li>
             </ul>
-            <!-- CERRAR SESIÓN  <!-- Cuando el usuario inice sesión, cambiar el botón iniciar sesión por este 
-            <ul class="navbar-nav justify-content-end">
-                <li class="nav-item">
-                    <button type="button" class="btn btn-warning btn-lg" data-bs-toggle="modal"
-                        data-bs-target="#exampleModal" data-bs-whatever="@mdo">Cerrar Sesión</button>
-                </li>
-            </ul>
-            -->
 
+            <!-- INICIAR SESION -->
+            <form action="/cart" method="GET">
+                <input type="image" src="static/images/user.png" class="rounded float-start" alt="IMAGE">
+            </form>
             <!-- CARRITO -->
             <form action="/cart" method="GET">
-                <input type="image" src="static/images/cart.png" class="rounded float-start" alt="IMAGE">
+                <input type="image" src="static/images/carrito.png" class="rounded float-start" alt="IMAGE">
             </form>
-
         </div>
     </nav>
 
