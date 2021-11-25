@@ -5,9 +5,41 @@ import os
 
 app = Flask(__name__)
 
-@app.route('/')
+@app.route('/',methods=['GET','POST'])
 def principal():
-    return render_template('principal.html')
+    error = None
+    if request.method == 'POST':
+        #realizamos la lectura del archivo para comprobar la existencia del usuario
+        diccionarioUsuariosArchivo = None
+        
+        #abrimos el archivo usuarios.json
+        with open('static/usuarios/usuarios.json') as file:
+            #comprobamos sis está vacio el diccionario
+            if os.stat('static/usuarios/usuarios.json').st_size == 0:
+                diccionarioUsuariosArchivo = dict()
+            else:
+                data = json.load(file)
+                diccionarioUsuariosArchivo = data
+        
+        #verificamos si el usuario está registrado
+        if(request.form['usuario'] in diccionarioUsuariosArchivo):
+            
+            #Verificamos la contraseña del usuario
+            if(request.form['password'] == diccionarioUsuariosArchivo[request.form['usuario']][0]):
+                
+                user = diccionarioUsuariosArchivo[request.form['usuario']][1]
+                
+                #damos la session al usuario
+                session['usuario'] = user
+                session['correo'] = request.form['usuario']
+                
+                return redirect('/')
+            else: #password incorrecto
+                return render_template('principal.html',error='Password incorrecto')
+        else:   #Correo incorrecto
+            return render_template('principal.html',error='Email incorrecto')
+    else:   #regresamos a la pagina principal
+        return render_template('principal.html')
 
 @app.route('/cart')
 def cart():
