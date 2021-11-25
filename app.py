@@ -1,4 +1,7 @@
-from flask import Flask, render_template
+from flask import Flask, render_template,request,session
+from werkzeug.utils import redirect
+import json
+import os
 
 app = Flask(__name__)
 
@@ -38,8 +41,41 @@ def mexicana():
 def login():
     return render_template('login.html')
 
-@app.route('/registro')
+@app.route('/registro',methods=['GET','POST'])
 def registro():
+    if request.method == 'POST':
+        #Se registra el usuario
+        
+        nombre = request.form['nombre']
+        apellido = request.form['apellido']
+        correo = request.form['email']
+        #variable que mandaremos a escribir en el archivo
+        diccionarioUsuariosArchivo = None
+        
+        #Metemos al usuario a un diccionario
+        #Correo : Constrasena, nombre, apellido, carrito, pedidos, admin
+        diccionarioUsuario = {correo : [request.form['password'], nombre, apellido, None, None, False]}
+        
+        #abrimos el archivo para meter los datos al diccionario
+        with open('static/usuarios/usuarios.json') as file:
+            #comprobamos sis está vacio el diccionario
+            if os.stat('static/usuarios/usuarios.json').st_size == 0:
+                diccionarioUsuariosArchivo = dict()
+            else:
+                data = json.load(file)
+                diccionarioUsuariosArchivo = data
+                
+        #comprobamos si existe el usuario en el archivo
+        if correo in diccionarioUsuariosArchivo:
+            #Se debera de mostrar un cuadro emergente mencionando el error
+            print("Porfa, alguien haga esto d:")
+        else:   #se realizará la actualizacion del archivo
+            actualizarArchivo(diccionarioUsuario,diccionarioUsuariosArchivo)
+            
+        #se mostrara un cuadro diciendo que ya se registro
+        
+        #mandamos al usuario a la pagina principal
+        return redirect('/')
     return render_template('registro.html')
 
 @app.route('/italiana')
@@ -92,3 +128,13 @@ def parilladas():
 
 if __name__ == '__main__':
     app.run(debug=True)
+
+
+def actualizarArchivo(diccionarioUsuario,diccionarioArchivo):
+    #juntamos los diccionarios
+    diccionarioArchivo.update(diccionarioUsuario)
+            
+    #metemos los datos al json
+    with open('static/usuarios/usuarios.json',"w") as outfile:  #abrimos el archivo e indicamos que vamos a escribir en él
+        json.dump(diccionarioArchivo,outfile)
+        
