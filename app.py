@@ -25,13 +25,14 @@ def principal():
         if(request.form['usuario'] in diccionarioUsuariosArchivo):
             
             #Verificamos la contraseña del usuario
-            if(request.form['password'] == diccionarioUsuariosArchivo[request.form['usuario']][0]):
+            if(request.form['password'] == diccionarioUsuariosArchivo[request.form['usuario']][1]):
                 
                 user = diccionarioUsuariosArchivo[request.form['usuario']][1]
                 
                 #damos la session al usuario
                 session['usuario'] = user
                 session['correo'] = request.form['usuario']
+                session['admin'] = diccionarioUsuariosArchivo[request.form['usuario']][5]
                 
                 return redirect('/')
             else: #password incorrecto
