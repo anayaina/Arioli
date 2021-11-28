@@ -8,7 +8,7 @@
     <script src="js/jquery.min.js"></script>
     <script src="{{ url_for('static', filename='js/bootstrap.bundle.js') }}"></script>
     <!-- CUSTOM CSS -->
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/nosotros.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/china.css') }}">
 </head>
 
 <body>
@@ -95,50 +95,46 @@
             </div>
         </div>
     </nav>
-
-
-    <!-- BARRA NOSOTROS -->
+    <!-- MEXICANA -->
     <nav class="navbar navbar-expand-lg navbar-dark">
         <div class="container-fluid justify-content-center">
-            <h2><br> COMIDA CHINA </h2>
+            <img src="/static/images/bannerchina.png" class="img-fluid" alt="COMIDA CHINA">
         </div>
     </nav>
+    <!-- COMIDAS -->
+    <div class="">
+        <div class="text-md-center">
+            <section class="container content-section">
+                <div class="shop-items">
+                    <div class="shop-item">
+                        <span class="shop-item-title">ARROZ CANTONES</span>
+                        <img class="shop-item-image" src="static/images/arrozc.png">
+                        <div class="shop-item-details">
+                            <span class="shop-item-price">$200</span>
+                            <button class="btn btn-warning shop-item-button" type="button">Agregar al Carrito</button>
+                        </div>
+                    </div>
+                    <div class="shop-item">
+                        <span class="shop-item-title">CARNITAS ROJAS</span>
+                        <img class="shop-item-image" src="static/images/carnitas.png">
+                        <div class="shop-item-details">
+                            <span class="shop-item-price">$110</span>
+                            <button class="btn btn-warning shop-item-button" type="button">Agregar al Carrito</button>
+                        </div>
+                    </div>
+                    <div class="shop-item">
+                        <span class="shop-item-title">POLLO A LA NARANJA</span>
+                        <img class="shop-item-image" src="static/images/pollonaranja.png">
+                        <div class="shop-item-details">
+                            <span class="shop-item-price">$350</span>
+                            <button class="btn btn-warning shop-item-button" type="button">Agregar al Carrito</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
 
-    <!-- TEXTOS -->
-    <table border="2" align="center">
-        <t>
-            <tr>
-                <th>Entradas</th>
-                <th>imagen</th>
-                <th>descripcion</th>
-                <th></th>
-                <th>precio</th>
-            </tr>
-            </thead>
-            <tr>
-                <td>Arroz cantones</td>
-                <td><img src="static/images/arrozc.jpg" width="200" height="100"></td>
-                <td>el litro con pollo</td>
-                <td></td>
-                <td>$200</td>
-
-            </tr>
-            <tr>
-                <td>carnitas rojas</td>
-                <td><img src="static/images/carnitasr.jpg" width="200" height="100"></td>
-                <td>medio kilo</td>
-                <td></td>
-                <td>$110</td>
-            </tr>
-            <tr>
-                <td>pollo a la naranja</td>
-                <td><img src="static/images/pollo.jpg" width="200" height="100"></td>
-                <td>la orden individual acompañado de arroz blanco</br>
-                </td>
-                <td></td>
-                <td>$350</td>
-            </tr>
-    </table>
     <br><br>
     <!-- FOOTERS -->
     <footer class="page-footer font-small unique-color-dark">
