@@ -74,6 +74,10 @@ def mexicana():
 def login():
     return render_template('login.html')
 
+@app.route('/inicio')
+def inicio():
+    return render_template('inicio.html')
+
 @app.route('/registro',methods=['GET','POST'])
 def registro():
     if request.method == 'POST':
