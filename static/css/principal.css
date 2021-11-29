@@ -8,7 +8,7 @@
     text-align: center;
     font-weight: bold;
     font-size: 1.5em;
-    color: #333;
+    color: rgb(235, 152, 8);
     margin-bottom: 15px;
 }
 
@@ -23,12 +23,17 @@
 }
 
 .shop-item-price {
-    flex-grow: 1;
-    color: #333;
+    flex-grow: 20;
+    color: rgb(0, 0, 0);
 }
 
 .shop-items {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
+}
+
+.shop-item-button {
+    color: rgb(0, 0, 0);
+    background-color: rgb(235, 152, 8);
 }
