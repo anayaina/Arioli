@@ -71,38 +71,21 @@ def inicio():
 
 @app.route('/registro',methods=['GET','POST'])
 def registro():
+    error=None
     if request.method == 'POST':
-        #Se registra el usuario
-        
-        nombre = request.form['nombre']
-        apellido = request.form['apellido']
-        correo = request.form['email']
-        #variable que mandaremos a escribir en el archivo
-        diccionarioUsuariosArchivo = None
-        
-        #Metemos al usuario a un diccionario
-        #Correo : Constrasena, nombre, apellido, carrito, pedidos, admin
-        diccionarioUsuario = {correo : [request.form['password'], nombre, apellido, None, None, False]}
-        
-        #abrimos el archivo para meter los datos al diccionario
-        with open('static/usuarios/usuarios.json') as file:
-            #comprobamos sis está vacio el diccionario
-            if os.stat('static/usuarios/usuarios.json').st_size == 0:
-                diccionarioUsuariosArchivo = dict()
-            else:
-                data = json.load(file)
-                diccionarioUsuariosArchivo = data
-                
-        #comprobamos si existe el usuario en el archivo
-        if correo in diccionarioUsuariosArchivo:
-            #Se debera de mostrar un cuadro emergente mencionando el error
-            print("Porfa, alguien haga esto d:")
-        else:   #se realizará la actualizacion del archivo
-            actualizarArchivo(diccionarioUsuario,diccionarioUsuariosArchivo)
-            
-        #se mostrara un cuadro diciendo que ya se registro
-        
-        #mandamos al usuario a la pagina principal
+        name, surname, email, password = request.form['name'], request.form['surname'], request.form['email'], request.form['password']
+        if email in dict_usuarios:
+            return render_template('registro.html', error='Correo ya registrado')
+        dict_usuarios[email]={}
+        dict_usuarios[email]['name'] = name
+        dict_usuarios[email]['surname'] = surname
+        dict_usuarios[email]['password'] = password
+        dict_usuarios[email]['carrito'] = None
+        dict_usuarios[email]['pedido'] = None
+        dict_usuarios[email]['admin'] = False
+        with open('static/usuarios/usuarios.json', 'w') as fp:
+                json.dump(dict_usuarios, fp)
+        session['username'] = name
         return redirect('/')
     return render_template('registro.html')
 
