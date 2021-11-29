@@ -27,10 +27,15 @@
             </div>
 
             <!-- INICIAR SESION -->
-            <form action="/inicio" method="GET">
-                <input type="image" src="static/images/user.png" class="rounded float-start" alt="IMAGE">
-            </form>
-
+            {% if user %}
+                <form action="/user" method="GET">
+                    <input type="image" src="static/images/user.png" class="rounded float-start" alt="IMAGE">
+                </form>
+            {% else %}
+                <form action="/inicio" method="GET">
+                    <input type="image" src="static/images/user.png" class="rounded float-start" alt="IMAGE">
+                </form>
+            {% endif %}
             <!-- CARRITO -->
             <form action="/cart" method="GET">
                 <input type="image" src="static/images/carrito.png" class="rounded float-start" alt="IMAGE">
