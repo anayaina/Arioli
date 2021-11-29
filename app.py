@@ -6,7 +6,6 @@ import secrets
 
 app = Flask(__name__)
 app.secret_key = secrets.token_hex(16)
-app.run(debug=True)
 
 #abrir diccionario usuarios
 with open('static/usuarios/usuarios.json') as f:
