@@ -19,7 +19,7 @@
 .shop-item-details {
     display: flex;
     align-items: center;
-    padding: 0px;
+    padding: 5px;
 }
 
 .shop-item-price {
