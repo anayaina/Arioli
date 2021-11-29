@@ -6,6 +6,11 @@ import secrets
 
 app = Flask(__name__)
 app.secret_key = secrets.token_hex(16)
+app.run(debug=True)
+
+#abrir diccionario usuarios
+with open('static/usuarios/usuarios.json') as f:
+    dict_usuarios = json.load(f)
 
 @app.route('/',methods=['GET','POST'])
 def principal():
@@ -47,32 +52,20 @@ def login():
 def inicio():
     error = None
     if request.method == 'POST':
-        #variable donde estaran los datos del archivo
-        diccionarioUsuariosArchivo = None
-        
-        #Realizamos la lectura del archivo
-        with open('static/usuarios/usuarios.json') as file:
-            #comprobamos si esta vacio el archivo
-            if os.stat('static/usuarios/usuarios.json').st_size == 0:
-                diccionarioUsuariosArchivo = dict()
-            else:
-                data = json.load(file)
-                diccionarioUsuariosArchivo = data
-        
+        email = request.form['email']
         #verificamos si el usuario esta registrado
-        if (request.form['usuario'] in diccionarioUsuariosArchivo):
-            
+        if email in dict_usuarios:
             #verificamos la contraseña del usuario
-            if (request.form['contrasena'] == diccionarioUsuariosArchivo[request.form['usuario']][0]):
-                
-                #damos la session al usuario
+            if dict_usuarios[email]['password'] == request.form['password']:
+                session['username'] = dict_usuarios[email]['name']
+                '''
                 session['nombre'] = diccionarioUsuariosArchivo[request.form['usuario']][1]
-                session['user'] = request.form['usuario']
+                session['user'] = request.form['usuario']''' #lo dejo xq no sé xq hay nombre y user en session
                 return redirect('/')
             else:
-                return render_template('inicio.html',error='Paswword incorrecto')
+                return render_template('inicio.html',error='Contraseña incorrecta')
         else:
-            return render_template('inicio.html',error='Email Incorrecto')
+            return render_template('inicio.html',error='Correo incorrecto')
     else:
         return render_template('inicio.html')
 
