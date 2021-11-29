@@ -2,7 +2,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Sobre Nosotros</title>
+    <title>Arioli - Navidad</title>
     <!-- BOOTSTRAP 4 CDN -->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
     <script src="js/jquery.min.js"></script>
@@ -12,88 +12,131 @@
 </head>
 
 <body>
-    <!-- BARRA MENU -->
+    <!-- BARRA LOGO -->
     <nav class="navbar navbar-expand-lg navbar-light bg-warning bd-example">
         <div class="container-fluid">
             <form action="/" method="GET">
                 <input type="image" src="static/images/logorb.png" class="rounded float-start" alt="IMAGE">
             </form>
-            <div class="navbar-collapse" id="barramenu">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Comida Mexicana</a>
-                    </li>
-                    <ul class="navbar-nav">
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Comidas Internacionales</a>
-                        </li>
-                        <ul class="navbar-nav">
-                            <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="/gourmet">Gourmet</a>
-                            </li>
-                            <ul class="navbar-nav">
-                                <li class="nav-item">
-                                    <a class="nav-link active" aria-current="page" href="especial">Especialidades</a>
-                                </li>
-                            </ul>
-                            <ul class="navbar-nav">
-                                <li class="nav-item">
-                                    <a class="nav-link active" aria-current="page" href="/nosotros">Nosotros</a>
-                                </li>
-                            </ul>
+            <!-- BARRA BUSCAR -->
+            <div class="nav-item col-6" id="barramenu">
+                <form class="d-flex">
+                    <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
+                    <button class="btn btn-dark" type="submit">Buscar</button>
+                </form>
             </div>
+
+            <!-- INICIAR SESION -->
             <ul class="navbar-nav justify-content-end">
                 <li class="nav-item">
-                    <a class="nav-link active" href="/login">Iniciar Sesión</a>
+                    <input type="image" src="static/images/user.png" class="btn btn-warning btn-lg" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo"></button>
+                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">Iniciar Sesión</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <form>
+                                        <div class="mb-3">
+                                            <!-- Usuario -->
+                                            <label class="form-label">Usuario</label><br>
+                                            <input type="text" id="text" class="form-control" name="usuario" placeholder="Usuario">
+                                        </div>
+                                        <div class="mb-3">
+                                            <!-- Contraseña -->
+                                            <label class="form-label">Contraseña</label><br>
+                                            <input type="password" id="password" class="form-control" name="password" placeholder="Contraseña"><br>
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="modal-footer">
+                                    <a class="btn btn-light " href="/registro" role="button">Crear una Cuenta</a>
+                                    <button type="button" class="btn btn-danger">Acceder</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </li>
             </ul>
+
+            <!-- CARRITO -->
+            <form action="/cart" method="GET">
+                <input type="image" src="static/images/carrito.png" class="rounded float-start" alt="IMAGE">
+            </form>
         </div>
     </nav>
 
-    <!-- BARRA NOSOTROS -->
+    <!-- BARRA COMIDAS -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-danger">
+        <div class="container-fluid justify-content-start">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+<span class="navbar-toggler-icon"></span>
+</button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="mb-0 h5 nav-link active" aria-current="page" href="/mexicana">Comida Mexicana</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="mb-0 h5 nav-link active" aria-current="page" href="/internacional">Comida Internacional</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="mb-0 h5 nav-link active" aria-current="page" href="/gourmet">Gourmet</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="mb-0 h5 nav-link active" aria-current="page" href="/especial">Especialidades</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="mb-0 h5 nav-link active" aria-current="page" href="/nosotros">Nosotros</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- GOURMET -->
     <nav class="navbar navbar-expand-lg navbar-dark">
         <div class="container-fluid justify-content-center">
-            <h2><br> PLATILLOS NAVIDEÑOS </h2>
+            <img src="/static/images/bannernav.png" class="img-fluid" alt="NAVIDAD">
         </div>
     </nav>
+    <!-- COMIDA -->
+    <div class="">
+        <div class="text-md-center">
+            <section class="container content-section">
+                <div class="shop-items">
+                    <div class="shop-item">
+                        <span class="shop-item-title">ROSCA NAVIDEÑA</span>
+                        <img class="shop-item-image" src="static/images/roscanav.png">
+                        <div class="shop-item-details">
+                            <span class="shop-item-price">$1700</span>
+                            <button class="btn btn-warning shop-item-button" type="button">Agregar al Carrito</button>
+                        </div>
+                    </div>
+                    <div class="shop-item">
+                        <span class="shop-item-title">PERA AL VINO TINTO</span>
+                        <img class="shop-item-image" src="static/images/peranav.png">
+                        <div class="shop-item-details">
+                            <span class="shop-item-price">$450</span>
+                            <button class="btn btn-warning shop-item-button" type="button">Agregar al Carrito</button>
+                        </div>
+                    </div>
+                    <div class="shop-item">
+                        <span class="shop-item-title">PIERNA Y ENSALADA DE PIÑA Y CIRUELA</span>
+                        <img class="shop-item-image" src="static/images/piernanav.png">
+                        <div class="shop-item-details">
+                            <span class="shop-item-price">$480</span>
+                            <button class="btn btn-warning shop-item-button" type="button">Agregar al Carrito</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
 
-    <!-- TEXTOS -->
-    <table border="2" align="center"> 
-        <t>
-        <tr>
-          <th>Platillos</th>
-          <th>imagen</th>
-          <th>descripcion</th>
-          <th></th>
-          <th>precio</th>
-        </tr>
-        </t>
-        <tr>
-          <td>Rosca navideña</td>    
-          <td><img src="static/images/rn.jpg" width="200" height="100"></td>
-          <td>---------------------------</td>
-          <td></td>
-          <td>$1700</td>
-          
-        </tr>
-        <tr>
-            <td>Pera al vino tinto</td>    
-            <td><img src="static/images/pv.jpg" width="200" height="100"></td>
-            <td>---------------------</td>
-            <td></td>
-            <td>$450</td>
-        </tr>
-        <tr>
-            <td>Pierna y ensalada de piña y ciruela</td>    
-            <td><img src="static/images/pe.jpg" width="200" height="100"></td>
-            <td>---------------</br>
-            </td>
-            <td></td>
-            <td>$480</td>
-        </tr>
-        
-        </table>
-    
+    </table>
+
     <!-- BARRA ABAJO -->
     <div>
         <footer class="text-center text-lg-start bg-warning text-active">
