@@ -136,6 +136,10 @@ def navidad():
 def parilladas():
     return render_template('parrilladas.html')
 
+@app.route('/admin')
+def admin():
+    return render_template('admin.html')
+
 if __name__ == '__main__':
     app.run(debug=True)
 
