@@ -52,12 +52,17 @@
     <!-- INICIAR SESION -->
 
     <section class="form-login">
-        <h3 class="section-header text-center">INICIAR SESION</h3><br>
-        <input class="controls" type="text" name="usuario" value="" placeholder="Usuario">
-        <input class="controls" type="password" name="contrasena" value="" placeholder="Contraseña">
-        <input class="buttons" type="submit" name="" value="Ingresar">
+        <form action="" method="post">
+            <h3 class="section-header text-center">INICIAR SESION</h3><br>
+            <input class="controls" type="text" name="email" value="{{ request.form.email }}" placeholder="Correo">
+            <input class="controls" type="password" name="password" value="{{request.form.password }}" placeholder="Contraseña">
+            <input class="buttons" type="submit" name="" value="Ingresar">
+        </form>
         <p><a href="#">¿Olvidastes tu Contraseña?</a></p>
         <p><a href="/registro">Aún no tengo una cuenta</a></p>
+        {% if error %}
+        <p class="error"><strong>Error:</strong> {{ error }}</p>
+      {% endif %}
     </section>
 
     <br><br>
