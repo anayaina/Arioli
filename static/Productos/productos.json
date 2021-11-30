@@ -3,7 +3,8 @@
         "precio": 110,
         "title": "Enchiladas Sonorenses",
         "thumbnai": "Inserte Imagen",
-        "descripcion": "inserte descripcion"
+        "descripcion": "inserte descripcion",
+        "categoria": "mexicana"
     },
     "2" :{
         "precio": 120,
