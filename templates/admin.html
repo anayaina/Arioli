@@ -14,101 +14,50 @@
 
 <body>
     <br><br>
-    <div class="datatable-container">
-        <div class="header-tools">
-            <div class="tools">
-                <ul>
-                    <li><span><input type="checkbox"></span></li>
-                    <li>
-                        <button>
-                            <i class="material-icons">add_circle</i>
-                        </button>
-                    </li>
-                    <li>
-                        <button>
-                            <i class="material-icons">edit</i>
-                        </button>
-                    </li>
-                    <li>
-                        <button>
-                            <i class="material-icons">delete</i>
-                        </button>
-                    </li>
-                    <li>
-                        <button>
-                            <i class="material-icons">share</i>
-                        </button>
-                    </li>
-                </ul>
-            </div>
-            <div class="search">
-                <input type="text" class="search-input">
-            </div>
-        </div>
-        <table class="datatable">
-            <thead>
-                <tr>
-                    <th></th>
-                    <th>DISPONIBILIDAD</th>
-                    <th>PRODUCTO</th>
-                    <th>INSUMO</th>
-                    <th>PROVEEDOR</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <th class="table-checkbox"><input type="checkbox"></th>
-                    <td><span class="available"></span></td>
-                    <td>Galletas del Pueblo</td>
-                    <td>Manteca Vegetal</td>
-                    <td>SuperMC</td>
-                </tr>
-                <tr>
-                    <th class="table-checkbox"><input type="checkbox"></th>
-                    <td><span class="offline"></span></td>
-                    <td>Galletas del Pueblo</td>
-                    <td>Harina Los Gallos</td>
-                    <td>SuperMC</td>
-                </tr>
-                <tr>
-                    <th class="table-checkbox"><input type="checkbox"></th>
-                    <td><span class="offline"></span></td>
-                    <td>Barbacoa</td>
-                    <td>Chile Colorado</td>
-                    <td>SuperMC</td>
-                </tr>
-                <tr>
-                    <th class="table-checkbox"><input type="checkbox"></th>
-                    <td><span class="available"></span></td>
-                    <td>Barbacoa</td>
-                    <td>Chile Pasilla</td>
-                    <td>SuperMC</td>
-                </tr>
-            </tbody>
-        </table>
-        <div class="footer-tools">
-            <div class="list-items">
-                Mostrar
-                <select name="n-entries" id="n-enties" class="n-entries">
-                    <option value="15">5</option>
-                    <option value="10">10</option>
-                    <option value="15">15</option>
-                </select>
-            </div>
 
-            <div class="pages">
-                <ul>
-                    <li><span class="active">1</span></li>
-                    <li><button>2</button></li>
-                    <li><button>3</button></li>
-                    <li><button>4</button></li>
-                    <li><span>...</span></li>
-                    <li><button>9</button></li>
-                    <li><button>10</button></li>
-                </ul>
-            </div>
-        </div>
-    </div>
+    <table class="datatable">
+        <thead>
+            <tr>
+                <th></th>
+                <th>DISPONIBILIDAD</th>
+                <th>PRODUCTO</th>
+                <th>INSUMO</th>
+                <th>PROVEEDOR</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th class="table-checkbox"><input type="checkbox"></th>
+                <td><span class="available"></span></td>
+                <td>Galletas del Pueblo</td>
+                <td>Manteca Vegetal</td>
+                <td>SuperMC</td>
+            </tr>
+            <tr>
+                <th class="table-checkbox"><input type="checkbox"></th>
+                <td><span class="offline"></span></td>
+                <td>Galletas del Pueblo</td>
+                <td>Harina Los Gallos</td>
+                <td>SuperMC</td>
+            </tr>
+            <tr>
+                <th class="table-checkbox"><input type="checkbox"></th>
+                <td><span class="offline"></span></td>
+                <td>Barbacoa</td>
+                <td>Chile Colorado</td>
+                <td>SuperMC</td>
+            </tr>
+            <tr>
+                <th class="table-checkbox"><input type="checkbox"></th>
+                <td><span class="available"></span></td>
+                <td>Barbacoa</td>
+                <td>Chile Pasilla</td>
+                <td>SuperMC</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <script src="admin.js"></script>
 
 </body>
 
