@@ -12,7 +12,47 @@
 </head>
 
 <body>
+    <table class="table table-bordered">
+        <thead>
+           <tr>
+               <th colspan="3" class="text-center">
+                   Carrito de compras
+               </th>
+           </tr>
+           <tr>
+               <th>Producto</th>
+               <th>Cantidad</th>
+               <th>Acciones</th>
+           </tr>
+       </thead>
+       <tbody>
+           {% if cart %}
+              {% for key,value in cart.items() %}
 
+                   <tr class="text-center">
+                       <td>{{ value.1.title }}</td>
+                       <td>{{ value.0 }}</td>
+                       
+                   </tr>
+              {% endfor %}
+           {% else %}
+               <tr>
+                   <td colspan="3">
+                       <div class="alert alert-danger text-center">
+                           No tienes productos en el carrito
+                       </div>
+                   </td>
+               </tr>
+           {% endif %}
+       </tbody>
+       <tfoot>
+           <tr>
+           </tr>
+           {% if cart.items %}
+               
+           {% endif %}
+       </tfoot>
+   </table>
 </body>
 
 </html>

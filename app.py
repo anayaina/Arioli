@@ -22,7 +22,17 @@ def principal():
 
 @app.route('/cart')
 def cart():
-    return render_template('cart.html')
+    #declaramos el cart en session
+    session["cart"] = {}
+    
+    #obtenemos el carrito y lo introducimos en la session solo si se ha iniciado sesion
+    
+    #obtenemos el correo del usuario
+    correo = session["email"]
+    #metemos el carrito de compras el usuario
+    carrito = dict_usuarios[correo]["carrito"]
+    print(carrito)
+    return render_template('cart.html',cart=carrito)
 
 @app.route('/nosotros')
 def nosotros():
