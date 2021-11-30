@@ -1,5 +1,5 @@
-+<html>
 
+<html>
 <head>
     <meta charset="UTF-8">
     <title>Arioli - Productos</title>
@@ -98,30 +98,19 @@
             <section class="container content-section">
                 <form action="" method="post">
                     <div class="shop-items">
+                        {%for k,v in productos.items() %}
                         <div class="shop-item">
-                            <span class="shop-item-title">LASAÑA</span>
+                            <span class="shop-item-title">{{  v['title'] }}</span>
                             <img class="shop-item-image" src="static/images/lasaña.png">
                             <div class="shop-item-details">
-                                <span class="shop-item-price">$1150</span>
-                                <button class="btn btn-warning shop-item-button" type="submit" value="13" name="comprar">Agregar al Carrito</button>
+                                <span class="shop-item-price">${{  v['precio'] }}</span>
+                                    {% if username %}
+                                    <button class="btn btn-warning shop-item-button" type="submit" value="{{ k }}" name="comprar">Agregar al Carrito</button>
+                                    {% endif %} 
                             </div>
                         </div>
-                        <div class="shop-item">
-                            <span class="shop-item-title">OSSO BUSCO AL VINO TINTO</span>
-                            <img class="shop-item-image" src="static/images/osso.png">
-                            <div class="shop-item-details">
-                                <span class="shop-item-price">$350</span>
-                                <button class="btn btn-warning shop-item-button" type="submit" value="14" name="comprar">Agregar al Carrito</button>
-                            </div>
-                        </div>
-                        <div class="shop-item">
-                            <span class="shop-item-title">ENSALADA CAPRISSE</span>
-                            <img class="shop-item-image" src="static/images/caprise.png">
-                            <div class="shop-item-details">
-                                <span class="shop-item-price">$105</span>
-                                <button class="btn btn-warning shop-item-button" type="submit" value="15" name="comprar">Agregar al Carrito</button>
-                            </div>
-                        </div>
+                        {%endfor %}
+
                     </div>
                 </form>
             </section>
