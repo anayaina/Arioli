@@ -58,11 +58,11 @@ def mexicana():
             carrito = dict_usuarios[email]["carrito"]
             
             #verificamos si el carrito esta vacio
-            if carrito is None:
+            if carrito is None or len(carrito) == 0:
                 carrito = dict()
-            
-            
-            carrito[productId] = "Mission complete"
+                carrito[productId] = [1,dict_productos[productId]]
+            else:
+                carrito[productId][0] += 1
             
             dict_usuarios[email]["carrito"] = carrito
             
