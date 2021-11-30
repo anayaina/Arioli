@@ -32,7 +32,7 @@
                    <tr class="text-center">
                        <td>{{ value.1.title }}</td>
                        <td>{{ value.0 }}</td>
-                       
+                       <td>Total {{ value.1.precio * value.0}}</td>
                    </tr>
               {% endfor %}
            {% else %}
@@ -47,9 +47,12 @@
        </tbody>
        <tfoot>
            <tr>
+            <td colspan="3">
+                
+            </td>
            </tr>
-           {% if cart.items %}
-               
+           {% if cart.items() %}
+
            {% endif %}
        </tfoot>
    </table>

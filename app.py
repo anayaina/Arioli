@@ -378,4 +378,3 @@ def actualizarArchivo(diccionarioUsuario,diccionarioArchivo):
     #metemos los datos al json
     with open('static/usuarios/usuarios.json',"w") as outfile:  #abrimos el archivo e indicamos que vamos a escribir en él
         json.dump(diccionarioArchivo,outfile)
-        
