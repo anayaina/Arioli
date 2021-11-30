@@ -54,25 +54,8 @@ def mexicana():
         
         #se realiza un escaneo del archivo de productos
         if email in dict_usuarios:
-            #obtenemos el carrito del usuario
-            carrito = dict_usuarios[email]["carrito"]
-            
-            #verificamos si el carrito esta vacio
-            if carrito is None or len(carrito) == 0:
-                carrito = dict()
-                carrito[productId] = [1,dict_productos[productId]]
-            else:#si ya tiene elementos
-                if productId not in dict_usuarios: #si aun no está el producto en el carrito
-                    carrito[productId] = [1,dict_productos[productId]]
-                else:
-                    carrito[productId][0] += 1
-            
-            dict_usuarios[email]["carrito"] = carrito
-            
-            #realizamos la escritura
-            with open('static/usuarios/usuarios.json', 'w') as fp:
-                json.dump(dict_usuarios, fp)
-            
+            #Insertamos los datos del producto en el archivo
+            insertarProductoAlCarrito(dict_usuarios[email]["carrito"],productId,email)
             
             return render_template('mexicana.html')
         else:
@@ -126,53 +109,233 @@ def registro():
         return redirect('/')
     return render_template('registro.html')
 
-@app.route('/italiana')
+@app.route('/italiana',methods=['GET','POST'])
 def italiana():
-    return render_template('italiana.html')
+    if request.method == 'POST':
+        #Sacamos el ID del producto
+        productId = request.form['comprar']
+        email = session["email"]
+        print(productId)
+        
+        #se realiza un escaneo del archivo de productos
+        if email in dict_usuarios:
+            #Insertamos los datos del producto en el archivo
+            insertarProductoAlCarrito(dict_usuarios[email]["carrito"],productId,email)
+            
+            return render_template('italiana.html')
+        else:
+            return render_template('italiana.html',error='Necesita iniciar sesion')
+    else:
+        return render_template('italiana.html')
 
-@app.route('/argentina')
+@app.route('/argentina',methods=['GET','POST'])
 def argentina():
-    return render_template('argentina.html')
+    if request.method == 'POST':
+        #Sacamos el ID del producto
+        productId = request.form['comprar']
+        email = session["email"]
+        print(productId)
+        
+        #se realiza un escaneo del archivo de productos
+        if email in dict_usuarios:
+            #Insertamos los datos del producto en el archivo
+            insertarProductoAlCarrito(dict_usuarios[email]["carrito"],productId,email)
+            
+            return render_template('argentina.html')
+        else:
+            return render_template('argentina.html',error='Necesita iniciar sesion')
+    else:
+        return render_template('argentina.html')
 
-@app.route('/china')
+@app.route('/china',methods=['GET','POST'])
 def china():
-    return render_template('china.html')
+    if request.method == 'POST':
+        #Sacamos el ID del producto
+        productId = request.form['comprar']
+        email = session["email"]
+        print(productId)
+        
+        #se realiza un escaneo del archivo de productos
+        if email in dict_usuarios:
+            #Insertamos los datos del producto en el archivo
+            insertarProductoAlCarrito(dict_usuarios[email]["carrito"],productId,email)
+            
+            return render_template('china.html')
+        else:
+            return render_template('china.html',error='Necesita iniciar sesion')
+    else:
+        return render_template('china.html')
 
-@app.route('/cocina')
+@app.route('/cocina',methods=['GET','POST'])
 def cocina():
-    return render_template('cocina.html')
+    if request.method == 'POST':
+        #Sacamos el ID del producto
+        productId = request.form['comprar']
+        email = session["email"]
+        print(productId)
+        
+        #se realiza un escaneo del archivo de productos
+        if email in dict_usuarios:
+            #Insertamos los datos del producto en el archivo
+            insertarProductoAlCarrito(dict_usuarios[email]["carrito"],productId,email)
+            
+            return render_template('cocina.html')
+        else:
+            return render_template('cocina.html',error='Necesita iniciar sesion')
+    else:
+        return render_template('cocina.html')
 
-@app.route('/conservas')
+@app.route('/conservas',methods=['GET','POST'])
 def conservas():
-    return render_template('conservas.html')
+    if request.method == 'POST':
+        #Sacamos el ID del producto
+        productId = request.form['comprar']
+        email = session["email"]
+        print(productId)
+        
+        #se realiza un escaneo del archivo de productos
+        if email in dict_usuarios:
+            #Insertamos los datos del producto en el archivo
+            insertarProductoAlCarrito(dict_usuarios[email]["carrito"],productId,email)
+            
+            return render_template('conservas.html')
+        else:
+            return render_template('conservas.html',error='Necesita iniciar sesion')
+    else:
+        return render_template('conservas.html')
 
-@app.route('/japonesa')
+@app.route('/japonesa',methods=['GET','POST'])
 def japonesa():
-    return render_template('japonesa.html')
+    if request.method == 'POST':
+        #Sacamos el ID del producto
+        productId = request.form['comprar']
+        email = session["email"]
+        print(productId)
+        
+        #se realiza un escaneo del archivo de productos
+        if email in dict_usuarios:
+            #Insertamos los datos del producto en el archivo
+            insertarProductoAlCarrito(dict_usuarios[email]["carrito"],productId,email)
+            
+            return render_template('japonesa.html')
+        else:
+            return render_template('japonesa.html',error='Necesita iniciar sesion')
+    else:
+        return render_template('japonesa.html')
 
-@app.route('/tailandesa')
+@app.route('/tailandesa',methods=['GET','POST'])
 def tailandesa():
-    return render_template('tailandesa.html')
+    if request.method == 'POST':
+        #Sacamos el ID del producto
+        productId = request.form['comprar']
+        email = session["email"]
+        print(productId)
+        
+        #se realiza un escaneo del archivo de productos
+        if email in dict_usuarios:
+            #Insertamos los datos del producto en el archivo
+            insertarProductoAlCarrito(dict_usuarios[email]["carrito"],productId,email)
+            
+            return render_template('tailandesa.html')
+        else:
+            return render_template('tailandesa.html',error='Necesita iniciar sesion')
+    else:
+        return render_template('tailandesa.html')
 
-@app.route('/panaderia')
+@app.route('/panaderia',methods=['GET','POST'])
 def panaderia():
-    return render_template('panaderia.html')
+    if request.method == 'POST':
+        #Sacamos el ID del producto
+        productId = request.form['comprar']
+        email = session["email"]
+        print(productId)
+        
+        #se realiza un escaneo del archivo de productos
+        if email in dict_usuarios:
+            #Insertamos los datos del producto en el archivo
+            insertarProductoAlCarrito(dict_usuarios[email]["carrito"],productId,email)
+            
+            return render_template('panaderia.html')
+        else:
+            return render_template('panaderia.html',error='Necesita iniciar sesion')
+    else:
+        return render_template('panaderia.html')
 
-@app.route('/reposteria')
+@app.route('/reposteria',methods=['GET','POST'])
 def reposteria():
-    return render_template('reposteria.html')
+    if request.method == 'POST':
+        #Sacamos el ID del producto
+        productId = request.form['comprar']
+        email = session["email"]
+        print(productId)
+        
+        #se realiza un escaneo del archivo de productos
+        if email in dict_usuarios:
+            #Insertamos los datos del producto en el archivo
+            insertarProductoAlCarrito(dict_usuarios[email]["carrito"],productId,email)
+            
+            return render_template('reposteria.html')
+        else:
+            return render_template('reposteria.html',error='Necesita iniciar sesion')
+    else:
+        return render_template('reposteria.html')
 
-@app.route('/taquiza')
+@app.route('/taquiza',methods=['GET','POST'])
 def taquiza():
-    return render_template('taquiza.html')
+    if request.method == 'POST':
+        #Sacamos el ID del producto
+        productId = request.form['comprar']
+        email = session["email"]
+        print(productId)
+        
+        #se realiza un escaneo del archivo de productos
+        if email in dict_usuarios:
+            #Insertamos los datos del producto en el archivo
+            insertarProductoAlCarrito(dict_usuarios[email]["carrito"],productId,email)
+            
+            return render_template('taquiza.html')
+        else:
+            return render_template('taquiza.html',error='Necesita iniciar sesion')
+    else:
+        return render_template('taquiza.html')
 
-@app.route('/navidad')
+@app.route('/navidad',methods=['GET','POST'])
 def navidad():
-    return render_template('navidad.html')
+    if request.method == 'POST':
+        #Sacamos el ID del producto
+        productId = request.form['comprar']
+        email = session["email"]
+        print(productId)
+        
+        #se realiza un escaneo del archivo de productos
+        if email in dict_usuarios:
+            #Insertamos los datos del producto en el archivo
+            insertarProductoAlCarrito(dict_usuarios[email]["carrito"],productId,email)
+            
+            return render_template('navidad.html')
+        else:
+            return render_template('navidad.html',error='Necesita iniciar sesion')
+    else:
+        return render_template('navidad.html')
 
-@app.route('/parrilladas')
+@app.route('/parrilladas',methods=['GET','POST'])
 def parilladas():
-    return render_template('parrilladas.html')
+    if request.method == 'POST':
+        #Sacamos el ID del producto
+        productId = request.form['comprar']
+        email = session["email"]
+        print(productId)
+        
+        #se realiza un escaneo del archivo de productos
+        if email in dict_usuarios:
+            #Insertamos los datos del producto en el archivo
+            insertarProductoAlCarrito(dict_usuarios[email]["carrito"],productId,email)
+            
+            return render_template('parrilladas.html')
+        else:
+            return render_template('parrilladas.html',error='Necesita iniciar sesion')
+    else:
+        return render_template('parrilladas.html')
 
 @app.route('/admin')
 def admin():
@@ -181,6 +344,22 @@ def admin():
 if __name__ == '__main__':
     app.run(debug=True)
 
+def insertarProductoAlCarrito(carrito,productId,email):
+    #verificamos si el carrito esta vacio
+    if carrito is None or len(carrito) == 0:
+        carrito = dict()
+        carrito[productId] = [1, dict_productos[productId]]
+    else:  # si ya tiene elementos
+        if productId not in dict_usuarios:  # si aun no está el producto en el carrito
+            carrito[productId] = [1, dict_productos[productId]]
+        else:
+            carrito[productId][0] += 1
+
+        dict_usuarios[email]["carrito"] = carrito
+
+    #realizamos la escritura
+    with open('static/usuarios/usuarios.json', 'w') as fp:
+        json.dump(dict_usuarios, fp)
 
 def actualizarArchivo(diccionarioUsuario,diccionarioArchivo):
     #juntamos los diccionarios
