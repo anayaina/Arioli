@@ -1,3 +1,4 @@
+
 from flask import Flask, render_template,request,session
 from werkzeug.utils import redirect
 import json
@@ -10,6 +11,10 @@ app.secret_key = secrets.token_hex(16)
 #abrir diccionario usuarios
 with open('static/usuarios/usuarios.json') as f:
     dict_usuarios = json.load(f)
+
+#abrir diccionario productos
+with open('static/Productos/productos.json') as f:
+    dict_productos = json.load(f)
 
 @app.route('/',methods=['GET','POST'])
 def principal():
@@ -39,9 +44,38 @@ def gourmet():
 def especial():
     return render_template('especial.html')
 
-@app.route('/mexicana')
+@app.route('/mexicana',methods=['GET','POST'])
 def mexicana():
-    return render_template('mexicana.html')
+    if request.method == 'POST':
+        #Sacamos el ID del producto
+        productId = request.form['comprar']
+        email = session["email"]
+        print(productId)
+        
+        #se realiza un escaneo del archivo de productos
+        if email in dict_usuarios:
+            #obtenemos el carrito del usuario
+            carrito = dict_usuarios[email]["carrito"]
+            
+            #verificamos si el carrito esta vacio
+            if carrito is None:
+                carrito = dict()
+            
+            
+            carrito[productId] = "Mission complete"
+            
+            dict_usuarios[email]["carrito"] = carrito
+            
+            #realizamos la escritura
+            with open('static/usuarios/usuarios.json', 'w') as fp:
+                json.dump(dict_usuarios, fp)
+            
+            
+            return render_template('mexicana.html')
+        else:
+            return render_template('mexicana.html',error='Necesita iniciar sesion')
+    else:
+        return render_template('mexicana.html')
 
 @app.route('/login')
 def login():
@@ -57,6 +91,7 @@ def inicio():
             #verificamos la contraseña del usuario
             if dict_usuarios[email]['password'] == request.form['password']:
                 session['username'] = dict_usuarios[email]['name']
+                session['email'] = email
                 '''
                 session['nombre'] = diccionarioUsuariosArchivo[request.form['usuario']][1]
                 session['user'] = request.form['usuario']''' #lo dejo xq no sé xq hay nombre y user en session

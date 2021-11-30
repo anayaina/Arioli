@@ -1,0 +1,18 @@
+{   "4" :{
+        "Precio":150,"title": "Coyotas",
+        "thumbnai": "Inserte Imagen",
+        "descripcion": "Paquete con 10 piezas"
+    }, 
+    "5" :{
+        "precio": 160,
+        "title": "Galletas del Pueblo",
+        "thumbnai": "Inserte Imagen",
+        "descripcion": "Kilo de galletas"
+    },
+    "6" :{
+        "precio": 180,
+        "title": "Empanadas de calabaza",
+        "thumbnai": "Inserte Imagen",
+        "descripcion": "Paquete con 10 piezas. Producto de temporada"
+    }
+}
