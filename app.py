@@ -18,7 +18,17 @@ with open('static/Productos/productos.json') as f:
 
 @app.route('/',methods=['GET','POST'])
 def principal():
+    if 'username' in session:
+        user = session['username']
+        return render_template('principal.html',username=user)
     return render_template('principal.html')
+
+@app.route('/products',methods=['GET','POST'])
+def productos():
+    if 'username' in session:
+        user = session['username']
+        return render_template('products.html',username=user)
+    return render_template('products.html')
 
 @app.route('/cart')
 def cart():
@@ -73,10 +83,6 @@ def mexicana():
     else:
         return render_template('mexicana.html')
 
-@app.route('/login')
-def login():
-    return render_template('login.html')
-
 @app.route('/inicio',methods=['GET','POST'])
 def inicio():
     error = None
@@ -88,9 +94,6 @@ def inicio():
             if dict_usuarios[email]['password'] == request.form['password']:
                 session['username'] = dict_usuarios[email]['name']
                 session['email'] = email
-                '''
-                session['nombre'] = diccionarioUsuariosArchivo[request.form['usuario']][1]
-                session['user'] = request.form['usuario']''' #lo dejo xq no sé xq hay nombre y user en session
                 return redirect('/')
             else:
                 return render_template('inicio.html',error='Contraseña incorrecta')
