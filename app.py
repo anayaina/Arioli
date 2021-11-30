@@ -30,6 +30,12 @@ def productos():
         return render_template('products.html',username=user)
     return render_template('products.html')
 
+@app.route('/logout') 
+def logout():
+    if 'username' in session:
+        session.pop('username',None)
+        return redirect('/')
+
 @app.route('/cart')
 def cart():
     #declaramos el cart en session
