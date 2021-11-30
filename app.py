@@ -26,10 +26,11 @@ def principal():
 
 @app.route('/products',methods=['GET','POST'])
 def productos():
+    productos = None
     if 'username' in session:
         user = session['username']
         return render_template('products.html',username=user)
-    return render_template('products.html')
+    return render_template('products.html', productos=dict_productos, len=len(dict_productos))
 
 @app.route('/logout') 
 def logout():
