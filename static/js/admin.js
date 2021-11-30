@@ -89,4 +89,41 @@ class DataTable {
     generateUUID() {
         return (Date.now() * Math.floor(Math.random() * 100000)).toString();
     }
-}
+
+    createHTML() { this.element.innerHTML = `
+    <div class = "datatable-container">
+        <div class = "header-tools"></div>
+            <div class = "tools">
+                <ul class"header-buttons-container"></ul>
+            </div>
+            <div class="search">
+                <input type="text" class="search-input">
+            </div>
+        </div>
+        <table class="databale">
+            <thead>
+                <tr>
+                </tr>
+            </thead>
+            <tbody>
+            </body>
+        </table>
+        <div class="footer-tools">
+            <div class="list-items">
+            show
+            <select name="n-enries" id="n-enries" class="n-enries"></select>
+            entries
+            </div>
+
+            <div class="pages"></div>
+        </div>
+    </div> ´; }
+            
+
+    
+        renderHeaders() {}
+        renderRows() {}
+        renderPagesButtons() {}
+        renderHeadersButtons() {}
+        renderHeadersSearch() {}
+        renderSelectEntries() {}
