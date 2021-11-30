@@ -72,6 +72,9 @@ class DataTable {
         this.renderHeaders();
         this.renderRows();
         this.renderPagesButtons();
+        this.renderHeadersButtons();
+        this.renderHeadersSearch();
+        this.renderSelectEntries();
     }
 
     initPagination(total, entries) {
