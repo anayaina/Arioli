@@ -18,11 +18,37 @@ with open('static/Productos/productos.json') as f:
 
 @app.route('/',methods=['GET','POST'])
 def principal():
+    if 'username' in session:
+        user = session['username']
+        return render_template('principal.html',username=user)
     return render_template('principal.html')
+
+@app.route('/products',methods=['GET','POST'])
+def productos():
+    if 'username' in session:
+        user = session['username']
+        return render_template('products.html',username=user)
+    return render_template('products.html')
+
+@app.route('/logout') 
+def logout():
+    if 'username' in session:
+        session.pop('username',None)
+        return redirect('/')
 
 @app.route('/cart')
 def cart():
-    return render_template('cart.html')
+    #declaramos el cart en session
+    session["cart"] = {}
+    
+    #obtenemos el carrito y lo introducimos en la session solo si se ha iniciado sesion
+    
+    #obtenemos el correo del usuario
+    correo = session["email"]
+    #metemos el carrito de compras el usuario
+    carrito = dict_usuarios[correo]["carrito"]
+    print(carrito)
+    return render_template('cart.html',cart=carrito)
 
 @app.route('/nosotros')
 def nosotros():
@@ -63,10 +89,6 @@ def mexicana():
     else:
         return render_template('mexicana.html')
 
-@app.route('/login')
-def login():
-    return render_template('login.html')
-
 @app.route('/inicio',methods=['GET','POST'])
 def inicio():
     error = None
@@ -78,9 +100,6 @@ def inicio():
             if dict_usuarios[email]['password'] == request.form['password']:
                 session['username'] = dict_usuarios[email]['name']
                 session['email'] = email
-                '''
-                session['nombre'] = diccionarioUsuariosArchivo[request.form['usuario']][1]
-                session['user'] = request.form['usuario']''' #lo dejo xq no sé xq hay nombre y user en session
                 return redirect('/')
             else:
                 return render_template('inicio.html',error='Contraseña incorrecta')
@@ -368,4 +387,3 @@ def actualizarArchivo(diccionarioUsuario,diccionarioArchivo):
     #metemos los datos al json
     with open('static/usuarios/usuarios.json',"w") as outfile:  #abrimos el archivo e indicamos que vamos a escribir en él
         json.dump(diccionarioArchivo,outfile)
-        
