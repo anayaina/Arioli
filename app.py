@@ -82,18 +82,6 @@ def navidad():
 def parilladas():
     return render_template('parrilladas.html')
 
-
-
-
-
-
-
-
-
-
-
-
-
 if __name__ == '__main__':
     app.run(debug=True)
     
