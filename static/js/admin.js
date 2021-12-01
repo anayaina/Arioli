@@ -70,6 +70,7 @@ class DataTable {
         container.id = this.element.id;
         this.element.innerHTML = '';
         this.element.replaceWith(container);
+        this.element = container;
 
         this.createHTML();
         this.renderHeaders();
