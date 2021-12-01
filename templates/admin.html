@@ -14,28 +14,26 @@
 </head>
 
 <body>
+    <br><br>
+
     <table>
         <tr>
             <td>
                 <form onsubmit="event.preventDefault();onFormSubmit();" autocomplete="off">
                     <div>
-                        <label>Full Name*</label><label class="validation-error hide" id="fullNameValidationError">This field is required.</label>
-                        <input type="text" name="fullName" id="fullName">
+                        <label>PRODUCTO</label><label class="validation-error hide" id="fullNameValidationError">*Campo Requerido</label>
+                        <input type="text" name="producto" id="producto">
                     </div>
                     <div>
-                        <label>EMP Code</label>
-                        <input type="text" name="empCode" id="empCode">
+                        <label>INSUMO</label>
+                        <input type="text" name="insumo" id="insumo">
                     </div>
                     <div>
-                        <label>Salary</label>
-                        <input type="text" name="salary" id="salary">
-                    </div>
-                    <div>
-                        <label>City</label>
-                        <input type="text" name="city" id="city">
+                        <label>PROVEEDOR</label>
+                        <input type="text" name="prov" id="prov">
                     </div>
                     <div class="form-action-buttons">
-                        <input type="submit" value="Submit">
+                        <input type="submit" value="Añadir">
                     </div>
                 </form>
             </td>
@@ -43,10 +41,9 @@
                 <table class="list" id="employeeList">
                     <thead>
                         <tr>
-                            <th>Full Name</th>
-                            <th>EMP Code</th>
-                            <th>Salary</th>
-                            <th>City</th>
+                            <th>PRODUCTO</th>
+                            <th>INSUMO</th>
+                            <th>PROVEEDOR</th>
                             <th></th>
                         </tr>
                     </thead>
