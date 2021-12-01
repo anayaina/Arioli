@@ -73,27 +73,57 @@
                       <!-- Nombre y Apellidos Usuario -->
                       <div class="col">
                         <label class="form-label">Nombre</label><br>
-                        <input type="text" class="form-control" placeholder="Nombre" aria-label="Nombre" name="name" value="{{ request.form.name }}">
+                        <input type="text" class="form-control" placeholder="Nombre" aria-label="Nombre">
                       </div>
                       <div class="col">
                         <label class="form-label">Apellido</label><br>
-                        <input type="text" class="form-control" placeholder="Apellido" aria-label="Apellido" name="surname" value="{{ request.form.surname }}">
+                        <input type="text" class="form-control" placeholder="Apellido" aria-label="Apellido">
                       </div>
                     </div>
                     <!-- Correo -->
                     <p></p>
                     <label class="form-label">Correo</label><br>
-                    <input type="text" id="email" class="form-control" name="email" placeholder="Correo" value="{{ request.form.email }}">
+                    <input type="text" id="email" class="form-control" name="email" placeholder="Correo">
                     <!-- Contraseña -->
                     <p></p>
                     <label class="form-label">Contraseña</label><br>
-                    <input type="password" id="password" class="form-control" placeholder="Contraseña" name="password" value="{{ request.form.password }}"><br>
+                    <input type="password" id="password" class="form-control" name="password"
+                      placeholder="Contraseña"><br>
                     <!-- Boton Sign up -->
                     <input type="submit" id="register" class="btn btn-danger" value="Crear Cuenta">
+                    <button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#exampleModal"
+                      data-bs-whatever="@mdo">Ya tengo una Cuenta</button>
+                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                      aria-hidden="true">
+                      <div class="modal-dialog">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Iniciar Sesión</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                          </div>
+                          <div class="modal-body">
+                            <form>
+                              <div class="mb-3">
+                                <!-- Usuario -->
+                                <label class="form-label">Usuario</label><br>
+                                <input type="text" id="text" class="form-control" name="usuario" placeholder="Usuario">
+                              </div>
+                              <div class="mb-3">
+                                <!-- Contraseña -->
+                                <label class="form-label">Contraseña</label><br>
+                                <input type="password" id="password" class="form-control" name="password"
+                                  placeholder="Contraseña"><br>
+                              </div>
+                            </form>
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                            <button type="button" class="btn btn-danger">Acceder</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                   </form>
-                  {% if error %}
-                      <p class="error"><strong>Error:</strong> {{ error }}</p>
-                  {% endif %}
                 </div>
               </div>
             </div>
