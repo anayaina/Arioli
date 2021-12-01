@@ -54,29 +54,22 @@ def logout():
         session.pop('username',None)
         return redirect('/')
 
-@app.route('/cart')
+@app.route('/cart',methods=['GET','POST'])
 def cart():
     if 'username' in session:
         user = session['username']
         email = session['email'] 
-    if request.method == 'POST':
-        if request.form['boton'] == 'Buscar':
-            category = request.form['category']
-            resultado = {k:v for (k,v) in dict_productos.items() if v['categoria']==category}
-            if 'username' in session:
-                return render_template('cart.html',username=user,productos=resultado, categories=categorias)
-            return render_template('cart.html', productos=resultado, categories=categorias)
-        else:
+        if request.method == 'POST':
             producto = request.form['boton']
-            dict_usuarios[email]['carrito'].append(producto)
+            dict_usuarios[email]['carrito'].remove(producto)
             with open('static/usuarios/usuarios.json', 'w') as fp:
                 json.dump(dict_usuarios, fp)
-            return render_template('cart.html',username=user,productos=dict_productos, categories=categorias, error="Producto añadido al carrito.")
-    else:
-        if 'username' in session:
-            #carrito = dict_usuarios[email['carrito']]
+            carrito = {k:v for (k,v) in dict_productos.items() if k in dict_usuarios[email]['carrito']}
+            return render_template('cart.html',username=user,productos=carrito, error="Producto eliminado del carrito.")
+        else:
             carrito = {k:v for (k,v) in dict_productos.items() if k in dict_usuarios[email]['carrito']}
             return render_template('cart.html',username=user,productos=carrito)
+    else:
         return render_template('cart.html', productos=None, error="Inicia sesión primero.")
 
 
