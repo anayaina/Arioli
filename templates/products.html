@@ -90,10 +90,16 @@
         </div>
     </nav>
     <!-- PLATILLOS -->
-    <div class="">
+    <div class=""> 
         <div class="text-md-center">
             <section class="container content-section">
                 <form action="" method="post">
+                    <select name="category">
+                        {% for category in categories %}
+                        <option value= "{{category}}">{{category}}</option>
+                        {% endfor %}
+                        <input class="buttons" type="submit" name="" value="Buscar">
+                    </select>
                     <div class="shop-items">
                         {%for k,v in productos.items() %}
                         <div class="shop-item">
