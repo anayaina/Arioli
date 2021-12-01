@@ -150,7 +150,7 @@ class DataTable {
             values.forEach(cell => {
                 data += `<td>${cell}</td>`;
             });
-            this.element.querySelector('tbody').innerHTML = `<tr>${data}</tr>`;
+            this.element.querySelector('tbody').innerHTML += `<tr>${data}</tr>`;
         }
     }
     isChecked() {
