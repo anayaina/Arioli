@@ -43,6 +43,9 @@
                     <li class="nav-item">
                         <a class="mb-0 h5 nav-link active" aria-current="page" href="/nosotros">Nosotros</a>
                     </li>
+                    {% if admin %}
+                        <a class="mb-0 h5 nav-link active" aria-current="page" href="/admin">Ver proveedores</a>
+                    {% endif %}
 
                 </ul>
             </div>
@@ -61,8 +64,8 @@
         <p><a href="#">¿Olvidastes tu Contraseña?</a></p>
         <p><a href="/registro">Aún no tengo una cuenta</a></p>
         {% if error %}
-        <p class="error"><strong>Error:</strong> {{ error }}</p>
-      {% endif %}
+            <p class="error"><strong>Error:</strong> {{ error }}</p>
+        {% endif %}
     </section>
 
     <br><br>

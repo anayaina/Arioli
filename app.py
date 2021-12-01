@@ -22,7 +22,9 @@ with open('static/Productos/productos.json') as f:
 def principal():
     if 'username' in session:
         user = session['username']
-        return render_template('principal.html',username=user)
+        admin = session['admin']
+        print(admin)
+        return render_template('principal.html',username=user, admin=admin)
     return render_template('principal.html')
 
 @app.route('/products',methods=['GET','POST'])
@@ -30,22 +32,23 @@ def productos():
     if 'username' in session:
         user = session['username']
         email = session['email'] 
+        admin = session['admin']
     if request.method == 'POST':
         if request.form['boton'] == 'Buscar':
             category = request.form['category']
             resultado = {k:v for (k,v) in dict_productos.items() if v['categoria']==category}
             if 'username' in session:
-                return render_template('products.html',username=user,productos=resultado, categories=categorias)
+                return render_template('products.html',username=user,productos=resultado, categories=categorias, admin=admin)
             return render_template('products.html', productos=resultado, categories=categorias)
         else:
             producto = request.form['boton']
             dict_usuarios[email]['carrito'].append(producto)
             with open('static/usuarios/usuarios.json', 'w') as fp:
                 json.dump(dict_usuarios, fp)
-            return render_template('products.html',username=user,productos=dict_productos, categories=categorias, error="Producto añadido al carrito.")
+            return render_template('products.html',username=user,productos=dict_productos, categories=categorias, error="Producto añadido al carrito.", admin=admin)
     else:
         if 'username' in session:
-            return render_template('products.html',username=user,productos=dict_productos, categories=categorias)
+            return render_template('products.html',username=user,productos=dict_productos, categories=categorias, admin=admin)
         return render_template('products.html', productos=dict_productos, categories=categorias)
 
 @app.route('/logout') 
@@ -59,16 +62,17 @@ def cart():
     if 'username' in session:
         user = session['username']
         email = session['email'] 
+        admin=session['admin']
         if request.method == 'POST':
             producto = request.form['boton']
             dict_usuarios[email]['carrito'].remove(producto)
             with open('static/usuarios/usuarios.json', 'w') as fp:
                 json.dump(dict_usuarios, fp)
             carrito = {k:v for (k,v) in dict_productos.items() if k in dict_usuarios[email]['carrito']}
-            return render_template('cart.html',username=user,productos=carrito, error="Producto eliminado del carrito.")
+            return render_template('cart.html',username=user,productos=carrito, error="Producto eliminado del carrito.", admin=admin)
         else:
             carrito = {k:v for (k,v) in dict_productos.items() if k in dict_usuarios[email]['carrito']}
-            return render_template('cart.html',username=user,productos=carrito)
+            return render_template('cart.html',username=user,productos=carrito, admin=admin)
     else:
         return render_template('cart.html', productos=None, error="Inicia sesión primero.")
 
@@ -123,6 +127,7 @@ def inicio():
             if dict_usuarios[email]['password'] == request.form['password']:
                 session['username'] = dict_usuarios[email]['name']
                 session['email'] = email
+                session['admin'] = dict_usuarios[email]['admin']
                 return redirect('/')
             else:
                 return render_template('inicio.html',error='Contraseña incorrecta')
@@ -149,6 +154,7 @@ def registro():
                 json.dump(dict_usuarios, fp)
         session['username'] = name
         session['email'] = email
+        session['admin'] = dict_usuarios[email]['admin']
         return redirect('/')
     return render_template('registro.html')
 
