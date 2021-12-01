@@ -27,7 +27,6 @@ def principal():
 
 @app.route('/products',methods=['GET','POST'])
 def productos():
-    productos, categories = None, None
     if 'username' in session:
         user = session['username']
         email = session['email'] 
@@ -57,17 +56,29 @@ def logout():
 
 @app.route('/cart')
 def cart():
-    #declaramos el cart en session
-    session["cart"] = {}
-    
-    #obtenemos el carrito y lo introducimos en la session solo si se ha iniciado sesion
-    
-    #obtenemos el correo del usuario
-    correo = session["email"]
-    #metemos el carrito de compras el usuario
-    carrito = dict_usuarios[correo]["carrito"]
-    print(carrito)
-    return render_template('cart.html',cart=carrito)
+    if 'username' in session:
+        user = session['username']
+        email = session['email'] 
+    if request.method == 'POST':
+        if request.form['boton'] == 'Buscar':
+            category = request.form['category']
+            resultado = {k:v for (k,v) in dict_productos.items() if v['categoria']==category}
+            if 'username' in session:
+                return render_template('cart.html',username=user,productos=resultado, categories=categorias)
+            return render_template('cart.html', productos=resultado, categories=categorias)
+        else:
+            producto = request.form['boton']
+            dict_usuarios[email]['carrito'].append(producto)
+            with open('static/usuarios/usuarios.json', 'w') as fp:
+                json.dump(dict_usuarios, fp)
+            return render_template('cart.html',username=user,productos=dict_productos, categories=categorias, error="Producto añadido al carrito.")
+    else:
+        if 'username' in session:
+            #carrito = dict_usuarios[email['carrito']]
+            carrito = {k:v for (k,v) in dict_productos.items() if k in dict_usuarios[email]['carrito']}
+            return render_template('cart.html',username=user,productos=carrito)
+        return render_template('cart.html', productos=None, error="Inicia sesión primero.")
+
 
 @app.route('/nosotros')
 def nosotros():
