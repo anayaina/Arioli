@@ -15,22 +15,21 @@
 
 <body>
     <br><br>
-
     <table>
         <tr>
             <td>
                 <form onsubmit="event.preventDefault();onFormSubmit();" autocomplete="off">
                     <div>
-                        <label>PRODUCTO</label><label class="validation-error hide" id="fullNameValidationError">*Campo Requerido</label>
-                        <input type="text" name="producto" id="producto">
+                        <label>PRODUCTO</label><label class="validation-error hide" id="fullNameValidationError">This field is required.</label>
+                        <input type="text" name="fullName" id="fullName">
                     </div>
                     <div>
                         <label>INSUMO</label>
-                        <input type="text" name="insumo" id="insumo">
+                        <input type="text" name="empCode" id="empCode">
                     </div>
                     <div>
                         <label>PROVEEDOR</label>
-                        <input type="text" name="prov" id="prov">
+                        <input type="text" name="salary" id="salary">
                     </div>
                     <div class="form-action-buttons">
                         <input type="submit" value="Añadir">
@@ -38,7 +37,7 @@
                 </form>
             </td>
             <td>
-                <table class="list" id="employeeList">
+                <table class="list" id="tablaproducto">
                     <thead>
                         <tr>
                             <th>PRODUCTO</th>
@@ -54,7 +53,6 @@
             </td>
         </tr>
     </table>
-
 </body>
 
 </html>
