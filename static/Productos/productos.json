@@ -100,7 +100,7 @@
     "13" :{
         "precio": 1150,
         "title": "Lasaña",
-        "thumbnai": "Inserte Imagen",
+        "thumbnail": "static/images/lasaña.png",
         "descripcion": "Para 6 personas acompañado de puré de papa",
         "categoria":"Italiana"
     },
@@ -220,7 +220,7 @@
     "44" :{
         "precio": 120,
         "title": "Pechugas Adobadas",
-        "thumbnai": "Inserte Imagen",
+        "thumbnai": "static/images/adobada.png",
         "descripcion": "Platillo individual con una pechuga de pollo con arroz entomatado, frijoles y tortillas de maiz",
         "categoria":"Parrilladas"
     },

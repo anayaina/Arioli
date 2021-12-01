@@ -27,7 +27,6 @@ def principal():
 
 @app.route('/products',methods=['GET','POST'])
 def productos():
-    productos, categories = None, None
     if 'username' in session:
         user = session['username']
         email = session['email'] 
@@ -55,19 +54,24 @@ def logout():
         session.pop('username',None)
         return redirect('/')
 
-@app.route('/cart')
+@app.route('/cart',methods=['GET','POST'])
 def cart():
-    #declaramos el cart en session
-    session["cart"] = {}
-    
-    #obtenemos el carrito y lo introducimos en la session solo si se ha iniciado sesion
-    
-    #obtenemos el correo del usuario
-    correo = session["email"]
-    #metemos el carrito de compras el usuario
-    carrito = dict_usuarios[correo]["carrito"]
-    print(carrito)
-    return render_template('cart.html',cart=carrito)
+    if 'username' in session:
+        user = session['username']
+        email = session['email'] 
+        if request.method == 'POST':
+            producto = request.form['boton']
+            dict_usuarios[email]['carrito'].remove(producto)
+            with open('static/usuarios/usuarios.json', 'w') as fp:
+                json.dump(dict_usuarios, fp)
+            carrito = {k:v for (k,v) in dict_productos.items() if k in dict_usuarios[email]['carrito']}
+            return render_template('cart.html',username=user,productos=carrito, error="Producto eliminado del carrito.")
+        else:
+            carrito = {k:v for (k,v) in dict_productos.items() if k in dict_usuarios[email]['carrito']}
+            return render_template('cart.html',username=user,productos=carrito)
+    else:
+        return render_template('cart.html', productos=None, error="Inicia sesión primero.")
+
 
 @app.route('/nosotros')
 def nosotros():
