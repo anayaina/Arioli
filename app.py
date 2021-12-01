@@ -28,16 +28,19 @@ def principal():
 @app.route('/products',methods=['GET','POST'])
 def productos():
     productos, categories = None, None
+    if 'username' in session:
+        user = session['username']
     if request.method == 'POST':
-        category = request.form['category']
-        resultado = {k:v for (k,v) in dict_productos.items() if v['categoria']==category}
-        if 'username' in session:
-            user = session['username']
-            return render_template('products.html',username=user,productos=resultado, categories=categorias)
-        return render_template('products.html', productos=resultado, categories=categorias)
+        if request.form['boton'] == 'Buscar':
+            category = request.form['category']
+            resultado = {k:v for (k,v) in dict_productos.items() if v['categoria']==category}
+            if 'username' in session:
+                return render_template('products.html',username=user,productos=resultado, categories=categorias)
+            return render_template('products.html', productos=resultado, categories=categorias)
+        else:
+            return render_template('products.html',username=user,productos=dict_productos, categories=categorias, error="Producto añadido al carrito.")
     else:
         if 'username' in session:
-            user = session['username']
             return render_template('products.html',username=user,productos=dict_productos, categories=categorias)
         return render_template('products.html', productos=dict_productos, categories=categorias)
 

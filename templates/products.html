@@ -98,8 +98,11 @@
                         {% for category in categories %}
                         <option value= "{{category}}">{{category}}</option>
                         {% endfor %}
-                        <input class="buttons" type="submit" name="" value="Buscar">
+                        <input class="buttons" type="submit" name="boton" value="Buscar">
                     </select>
+                    {% if error %}
+                        <p class="error"> {{ error }}</p>
+                    {% endif %}
                     <div class="shop-items">
                         {%for k,v in productos.items() %}
                         <div class="shop-item">
@@ -108,7 +111,7 @@
                             <div class="shop-item-details">
                                 <span class="shop-item-price">${{  v['precio'] }}</span>
                                     {% if username %}
-                                    <button class="btn btn-warning shop-item-button" type="submit" value="{{ k }}" name="comprar">Agregar al Carrito</button>
+                                    <button class="btn btn-warning shop-item-button" type="submit" value="{{ k }}" name="boton">Agregar al Carrito</button>
                                     {% endif %} 
                             </div>
                         </div>
