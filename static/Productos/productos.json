@@ -2,98 +2,98 @@
     "1" :{
         "precio": 110,
         "title": "Enchiladas Sonorenses",
-        "thumbnai": "Inserte Imagen",
+        "thumbnail": "static/images/enchiladas.png",
         "descripcion": "inserte descripcion",
         "categoria": "Sonora"
     },
     "2" :{
         "precio": 120,
         "title": "Gallina Pinta",
-        "thumbnai": "Inserte Imagen",
+        "thumbnail": "static/images/gallinapinta.png",
         "descripcion": "inserte descripcion",
         "categoria": "Sonora"
     },
     "3" :{
         "precio": 250,
         "title": "Empanadas de Calabaza",
-        "thumbnai": "Inserte Imagen",
+        "thumbnail": "static/images/empanadas.png",
         "descripcion": "inserte descripcion",
         "categoria": "Sonora"
     },
     "4" :{
         "Precio":150,
         "title": "Coyotas",
-        "thumbnai": "Inserte Imagen",
+        "thumbnail": "static/images/coyotas.png",
         "descripcion": "Paquete con 10 piezas",
         "categoria":"Sonora"
     }, 
     "5" :{
         "precio": 160,
         "title": "Galletas del Pueblo",
-        "thumbnai": "Inserte Imagen",
+        "thumbnail": "static/images/galletaspueblo.png",
         "descripcion": "Kilo de galletas",
         "categoria":"Sonora"
     },
     "6" :{
         "precio": 180,
         "title": "Empanadas de calabaza",
-        "thumbnai": "Inserte Imagen",
+        "thumbnail": "static/images/empádas.png",
         "descripcion": "Paquete con 10 piezas. Producto de temporada",
         "categoria":"Sonora"
     },
     "25" :{
         "precio": 600,
         "title": "Vitel Tonne",
-        "thumbnai": "Inserte Imagen",
+        "thumbnail": "static/images/vitel.png",
         "descripcion": "1 kilo de carne",
         "categoria":"Argentina"
     },
     "26" :{
         "precio": 600,
         "title": "Pastel de carne y papa",
-        "thumbnai": "Inserte Imagen",
+        "thumbnail": "static/images/pastelcarne.png",
         "descripcion": "Para 6 personas acompañado de ensalada",
         "categoria":"Argentina"
     },
     "45" :{
         "precio": 250,
         "title": "Salmon en Salsa de Frutos",
-        "thumbnai": "Inserte Imagen",
+        "thumbnail": "static/images/salmon.png",
         "descripcion": "Salmón con salsa de frutos, arroz salvaje con granos ancestrales",
         "categoria":"Saludable"
     },
     "46" :{
         "precio": 110,
         "title": "Brochetas de Pollo",
-        "thumbnai": "Inserte Imagen",
+        "thumbnail": "static/images/brochetas.png",
         "descripcion": "Brochetas de pollo con vegetales acompañadas de arroz blanco",
         "categoria":"Saludable"
     },
     "47" :{
         "precio": 110,
         "title": "Albondigas de Pollo al Guajillo",
-        "thumbnai": "Inserte Imagen",
+        "thumbnail": "static/images/albondiga.png",
         "descripcion": "La orden individual de albóndigas de pechuga de pollo con vegetales y garbanzos",
         "categoria":"Saludable"
     },
     "36" :{
         "precio": 130,
         "title": "Arroz Cantones",
-        "thumbnai": "Inserte Imagen",
+        "thumbnail": "static/images/arrozc.png",
         "descripcion": "Litro con pollo",
         "categoria":"China"
     },
     "37" :{
         "precio": 160,
         "title": "Carnitas Rojas",
-        "thumbnai": "Inserte Imagen",
+        "thumbnail": "static/images/carnitas.png",
         "descripcion": "Medio Kilo",
         "categoria":"China"
     },
     "38" :{
         "precio": 120,
         "title": "Pollo a la Naranja",
-        "thumbnai": "Inserte Imagen",
+        "thumbnail": "static/images/pollonaranja.png",
         "descripcion": "La orden individual acompañado de arroz blanco",
         "categoria":"China"
     },
@@ -107,63 +107,63 @@
     "14" :{
         "precio": 350,
         "title": "Osso Bucco al Vino Tinto",
-        "thumbnai": "Inserte Imagen",
+        "thumbnail": "static/images/osso.png",
         "descripcion": "Precio de plato individual. Acompañado de puré de papa",
         "categoria":"Italiana"
     },
     "15" :{
         "precio": 105,
         "title": "Ensalada Caprisse",
-        "thumbnai": "Inserte Imagen",
+        "thumbnail": "static/images/caprise.png",
         "descripcion": "Tomate, queso mozzarela, albahaca fresca y aderezo balsámico, porcion individual",
         "categoria":"Italiana"
     },
     "16" :{
         "precio": 200,
         "title": "Arroz Yakimeshi",
-        "thumbnai": "Inserte Imagen",
+        "thumbnail": "static/images/yakimeshi.png",
         "descripcion": "Con camarones empanizados",
         "categoria":"Japonesa"
     },
     "17" :{
         "precio": 110,
         "title": "Brochetas Yakitori",
-        "thumbnai": "Inserte Imagen",
+        "thumbnail": "static/images/brochetas.png",
         "descripcion": "Acompañado de arroz blanco",
         "categoria":"Japonesa"
     },
     "18" :{
         "precio": 350,
         "title": "Rosca de Sushi",
-        "thumbnai": "Inserte Imagen",
+        "thumbnail": "static/images/rosca.png",
         "descripcion": "Rellena de ensalada de surimi, pepino, aguacate, queso crema y zanahoria",
         "categoria":"Japonesa"
     },
     "39" :{
         "precio": 150,
         "title": "Chorizo de Pollo",
-        "thumbnai": "Inserte Imagen",
+        "thumbnail": "static/images/chorizo.png",
         "descripcion": "Porción de medio kilo, se entrega congerlado. Chorizo de pechuga de pollo, NO conservadores, NO colorantes, NO grasa. Riquísimo.",
         "categoria":"Regional"
     },
     "40" :{
         "precio": 100,
         "title": "Granola",
-        "thumbnai": "Inserte Imagen",
+        "thumbnail": "static/images/granola.png",
         "descripcion": "Granola artesanal Horneada, con miel de abeja, almendras, nueces, semillas. Bolsa de 250 gramos.",
         "categoria":"Regional"
     },
     "41" :{
         "precio": 100,
         "title": "Garapiñados",
-        "thumbnai": "Inserte Imagen",
+        "thumbnail": "static/images/garapiñados.png",
         "descripcion": "Bolsa con 250 gramos de nuez pecada en mitades.",
         "categoria":"Regional"
     },
     "22" :{
         "precio": 1700,
         "title": "Rosca Navideña",
-        "thumbnai": "Inserte Imagen",
+        "thumbnail": "static/images/roscanav.png",
         "descripcion": "Rosca de carne molida de sirloin, rellena de mezcla de quesos y vegetales, tocino encima, para 8 personas acompañado de ensalada y puré de papa",
         "categoria":"Navideño"
 
@@ -171,161 +171,161 @@
     "23" :{
         "precio": 450,
         "title": "Pera al vino tinto",
-        "thumbnai": "Inserte Imagen",
+        "thumbnail": "static/images/peranav.png",
         "descripcion": "4 piezas de peras junto con 1 litro de nive de vainilla",
         "categoria":"Navideño"
     },
     "24" :{
         "precio": 480,
         "title": "Pierna en salda de piña y ciruela",
-        "thumbnai": "Inserte Imagen",
+        "thumbnail": "static/images/piernanav.png",
         "descripcion": "Kilo acompañado de ensalada y pasta Alfredo",
         "categoria":"Navideño"
     },
     "33" :{
         "precio": 200,
         "title": "Pan para Hamburgesa",
-        "thumbnai": "Inserte Imagen",
+        "thumbnail": "static/images/ham.png",
         "descripcion": "10 piezas de pan integral con avena y zanahoria",
         "categoria":"Integral"
     },
     "34" :{
         "precio": 150,
         "title": "Pan de Ajo",
-        "thumbnai": "Inserte Imagen",
+        "thumbnail": "static/images/ajo.png",
         "descripcion": "10 piezas, harina integral",
         "categoria":"Integral"
     },
     "35" :{
         "precio": 450,
         "title": "Pan Briocho Trenzado",
-        "thumbnai": "Inserte Imagen",
+        "thumbnail": "static/images/brioche.png",
         "descripcion": "Pieza de Pan Brioche Integral relleno de jamón, mezcla de quesos, champoñones en escabeche",
         "categoria":"Integral"
     },
     "42" :{
         "precio": 150,
         "title": "Hamburgesa de Pollo",
-        "thumbnai": "Inserte Imagen",
+        "thumbnail": "static/images/hampollo.png",
         "descripcion": "Hamburguesa de pollo acompañada de papa asada",
         "categoria":"Parrilladas"
     },
     "43" :{
         "precio": 350,
         "title": "T-Bone Steak a la Florentina",
-        "thumbnai": "Inserte Imagen",
+        "thumbnail": "static/images/tbone.png",
         "descripcion": "Acompañado de puré de papa",
         "categoria":"Parrilladas"
     },
     "44" :{
         "precio": 120,
         "title": "Pechugas Adobadas",
-        "thumbnai": "static/images/adobada.png",
+        "thumbnail": "static/images/adobada.png",
         "descripcion": "Platillo individual con una pechuga de pollo con arroz entomatado, frijoles y tortillas de maiz",
         "categoria":"Parrilladas"
     },
     "30" :{
         "precio": 230,
         "title": "Bombon de Chocolate Relleno de Mazapan",
-        "thumbnai": "Inserte Imagen",
+        "thumbnail": "static/images/bombon.png",
         "descripcion": "Cajilla con 10 piezas",
         "categoria":"Repostería"
     },
     "31" :{
         "precio": 650,
         "title": "Flan Napolitano con Frutas",
-        "thumbnai": "Inserte Imagen",
+        "thumbnail": "static/images/flan.png",
         "descripcion": "Requísimo flan con frutas",
         "categoria":"Repostería"
     },
     "32" :{
         "precio": 420,
         "title": "Sticky Buns",
-        "thumbnai": "Inserte Imagen",
+        "thumbnail": "static/images/buns.png",
         "descripcion": "Charola con 9 porciones de pan con miel y nuez pecana",
         "categoria":"Repostería"
     },
     "27" :{
         "precio": 115,
         "title": "Pasta Oriental",
-        "thumbnai": "Inserte Imagen",
+        "thumbnail": "static/images/pasta.png",
         "descripcion": "Orden individual",
         "categoria":"Tailandesa"
     },
     "28" :{
         "precio": 115,
         "title": "Kung Pao",
-        "thumbnai": "Inserte Imagen",
+        "thumbnail": "static/images/kung.png",
         "descripcion": "Orden individual",
         "categoria":"Tailandesa"
     },
     "29" :{
         "precio": 115,
         "title": "Pad Thai",
-        "thumbnai": "Inserte Imagen",
+        "thumbnail": "static/images/pad.png",
         "descripcion": "Orden individual",
         "categoria":"Tailandesa"
     },
     "19" :{
         "precio": 130,
         "title": "Tacos de Canasta",
-        "thumbnai": "Inserte Imagen",
+        "thumbnail": "static/images/tacoscanasta.png",
         "descripcion": "Orden de 10 tacos, papa con carne",
         "categoria":"Taquiza"
     },
     "20" :{
         "precio": 120,
         "title": "Cahuamanta",
-        "thumbnai": "Inserte Imagen",
+        "thumbnail": "static/images/cahuamanta.png",
         "descripcion": "Litro acompañado de salsa, limones y repollo",
         "categoria":"Taquiza"
     },
     "21" :{
         "precio": 110,
         "title": "Fajitas",
-        "thumbnai": "Inserte Imagen",
+        "thumbnail": "static/images/fajitas.png",
         "descripcion": "Orden individual acompañado de arroz y frijoles",
         "categoria":"Taquiza"
     },
     "7" :{
         "precio": 140,
         "title": "Pozole Rojo",
-        "thumbnai": "Inserte Imagen",
+        "thumbnail": "static/images/pozole.png",
         "descripcion": "Litro de pozole acompañado de lechuga, totopos, cebolla y cilantro picado",
         "categoria":"Mexicana"
     },
     "8" :{
         "precio": 160,
         "title": "Mole",
-        "thumbnai": "Inserte Imagen",
+        "thumbnail": "static/images/mole.png",
         "descripcion": "Platillo de mole poblano acompañado de arroz rojo y frijoles de fiesta",
         "categoria":"Mexicana"
     },
     "9" :{
         "precio": 115,
         "title": "Caldo Tlalpeño",
-        "thumbnai": "Inserte Imagen",
+        "thumbnail": "static/images/caldot.png",
         "descripcion": "Litro de caldo tlalpeño",
         "categoria":"Mexicana"
     },
     "10" :{
         "precio": 140,
         "title": "Pan de Leche",
-        "thumbnai": "Inserte Imagen",
+        "thumbnail": "static/images/panl.png",
         "descripcion": "18 piezas",
         "categoria":"Panadería"
     },
     "11" :{
         "precio": 160,
         "title": "Elotitos",
-        "thumbnai": "Inserte Imagen",
+        "thumbnail": "static/images/elotitos.png",
         "descripcion": "18 piezas",
         "categoria":"Panadería"
     },
     "12" :{
         "precio": 115,
         "title": "Pan de café coreano",
-        "thumbnai": "Inserte Imagen",
+        "thumbnail": "static/images/pancoreano.png",
         "descripcion": "25 piezas",
         "categoria":"Panadería"
     }
