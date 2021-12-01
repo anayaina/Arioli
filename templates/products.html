@@ -103,11 +103,11 @@
                     {% if error %}
                         <p class="error"> {{ error }}</p>
                     {% endif %}
-                    <div class="shop-items">
+                    <div class="shop-items">x
                         {%for k,v in productos.items() %}
                         <div class="shop-item">
                             <span class="shop-item-title">{{  v['title'] }}</span>
-                            <img class="shop-item-image" src="static/images/lasaña.png">
+                            <img class="shop-item-image" src="{{  v['thumbnail'] }}">
                             <div class="shop-item-details">
                                 <span class="shop-item-price">${{  v['precio'] }}</span>
                                     {% if username %}
