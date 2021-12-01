@@ -71,11 +71,13 @@ class DataTable {
         this.element.innerHTML = '';
         this.element.replaceWith(container);
 
-
         this.createHTML();
         this.renderHeaders();
         this.rendererRows();
         this.renderPagesButtons();
+        this.renderHeadersButtons();
+        this.renderSearch();
+        this.renderSelectElement();
     }
 
     initPagination(total, entries) {
@@ -90,4 +92,47 @@ class DataTable {
     generateUUID() {
         return (Date.now() * Math.floor(Math.random() * 1000000)).toString;
     }
+
+    createHTML() {
+        this.element.innerHTML = `
+        <div class = "datatable-container">
+            <div class = "header-tools">
+                <div class = "tools">
+                    <ul class"header-buttons-container"></ul>
+                </div>
+            </div>
+            <div class="search">
+                <input type="text" class="search-input">
+            </div>
+        </div>
+        <table class="databale">
+            <thead>
+                <tr>
+                </tr>
+            </thead>
+            <tbody>
+            </body>
+        </table>
+        <div class="footer-tools">
+            <div class="list-items">
+                Mostar 
+                <select name="n-enries" id="n-enries" class="n-enries"></select>
+            </div>
+            <div class="pages">
+            </div>
+        </div>
+        </div> 
+        `;
+    }
+    renderHeaders() {
+        this.elements.querySelector('thead tr').innerHTML = '';
+        this.headers.forEach(header => {
+            this.element.querySelector('thead tr').innerHTML = `<tr>${header}</tr>`;
+        });
+    }
+    rendererRows() {}
+    renderPagesButtons() {}
+    renderHeadersButtons() {}
+    renderSearch() {}
+    renderSelectElement() {}
 }
