@@ -39,12 +39,10 @@
                                 </div>
                                 <div class="modal-body">
                                     {% if username %}
-                                        <label class="form-label">Bienvenido, {{ username }}</label><br>
-                                        <a class="btn btn-light " href="/logout" role="button">Cerrar Sesión</a>
-                                    {% else %}
+                                    <label class="form-label">Bienvenido, {{ username }}</label><br>
+                                    <a class="btn btn-light " href="/logout" role="button">Cerrar Sesión</a> {% else %}
                                     <a class="btn btn-light " href="/registro" role="button">Crear una Cuenta</a>
-                                    <a class="btn btn-light " href="/inicio" role="button">Iniciar Sesión</a>
-                                    {% endif %} 
+                                    <a class="btn btn-light " href="/inicio" role="button">Iniciar Sesión</a> {% endif %}
                                 </div>
                             </div>
                         </div>
@@ -94,13 +92,13 @@
     <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img src="static/images/image.jpeg" class="d-block w-70" alt="promo4">
+                <img src="static/images/image.jpeg" class="d-block w-5" alt="promo4">
             </div>
             <div class="carousel-item">
-                <img src="static/images/banner.png" class="d-block w-70" alt="promo2">
+                <img src="static/images/banner.png" class="d-block w-5" alt="promo2">
             </div>
             <div class="carousel-item">
-                <img src="static/images/image3.jpeg" class="d-block w-70" alt="promo3">
+                <img src="static/images/image3.jpeg" class="d-block w-5" alt="promo3">
             </div>
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
