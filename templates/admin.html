@@ -14,6 +14,52 @@
 </head>
 
 <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-warning bd-example">
+        <div class="container-fluid">
+            <form action="/" method="GET">
+                <input type="image" src="static/images/logorb.png" class="rounded float-start" alt="IMAGE">
+            </form>
+            <!-- BARRA BUSCAR -->
+            <div class="nav-item col-6" id="barramenu">
+                <form class="d-flex">
+                    <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
+                    <button class="btn btn-dark" type="submit">Buscar</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+    <nav class="navbar navbar-expand-lg navbar-light bg-danger">
+        <div class="container-fluid justify-content-start">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="mb-0 h5 nav-link active" aria-current="page" href="/mexicana">Comida Mexicana</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="mb-0 h5 nav-link active" aria-current="page" href="/internacional">Comida Internacional</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="mb-0 h5 nav-link active" aria-current="page" href="/gourmet">Gourmet</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="mb-0 h5 nav-link active" aria-current="page" href="/especial">Especialidades</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="mb-0 h5 nav-link active" aria-current="page" href="/nosotros">Nosotros</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="mb-0 h5 nav-link active" aria-current="page" href="/products">Ver todo</a>
+                    </li>
+                    {% if admin %}
+                        <a class="mb-0 h5 nav-link active" aria-current="page" href="/admin">Ver proveedores</a>
+                    {% endif %}
+                </ul>
+            </div>
+        </div>
+    </nav>
     <br><br>
     <table>
         <tr>
