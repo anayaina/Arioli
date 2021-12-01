@@ -1,5 +1,5 @@
 body>table {
-    width: 90%;
+    width: 100%;
 }
 
 table {
@@ -10,10 +10,15 @@ table.list {
     width: 100%;
 }
 
-td,
 th {
     border: 1px solid #dddddd;
-    text-align: left;
+    text-align: center;
+    padding: 8px;
+}
+
+td {
+    border: 1px solid #dddddd;
+    text-align: start;
     padding: 8px;
 }
 
@@ -25,19 +30,19 @@ table.list thead>tr {
 input[type=text],
 input[type=number] {
     width: 100%;
-    padding: 12px 20px;
+    padding: 12px 0px;
     margin: 8px 0;
     display: inline-block;
     border: 1px solid #ccc;
     border-radius: 4px;
-    box-sizing: border-box;
+    box-sizing: content-box;
 }
 
 input[type=submit] {
     width: 30%;
     background-color: #ddd;
     color: #000;
-    padding: 14px 20px;
+    padding: 14px 10px;
     margin: 8px 120;
     border: none;
     border-radius: 4px;
