@@ -67,6 +67,7 @@ class DataTable {
         container.id = this.element.id;
         this.element.innerHTML = '';
         this.element.replaceWith(container);
+        this.element = container;
 
         this.createHTML();
         this.renderHeaders();
@@ -90,11 +91,13 @@ class DataTable {
         return (Date.now() * Math.floor(Math.random() * 100000)).toString();
     }
 
-    createHTML() { this.element.innerHTML = `
-    <div class = "datatable-container">
-        <div class = "header-tools"></div>
-            <div class = "tools">
-                <ul class"header-buttons-container"></ul>
+    createHTML() {
+        this.element.innerHTML = `
+        <div class = "datatable-container">
+            <div class = "header-tools">
+                <div class = "tools">
+                    <ul class"header-buttons-container"></ul>
+                </div>
             </div>
             <div class="search">
                 <input type="text" class="search-input">
@@ -110,20 +113,27 @@ class DataTable {
         </table>
         <div class="footer-tools">
             <div class="list-items">
-            show
-            <select name="n-enries" id="n-enries" class="n-enries"></select>
-            entries
+                Mostar 
+                <select name="n-enries" id="n-enries" class="n-enries"></select>
             </div>
-
-            <div class="pages"></div>
+            <div class="pages">
+            </div>
         </div>
-    </div> ´; }
-            
+    </div> 
+    `;
+    }
 
-    
-        renderHeaders() {}
-        renderRows() {}
-        renderPagesButtons() {}
-        renderHeadersButtons() {}
-        renderHeadersSearch() {}
-        renderSelectEntries() {}
+    renderHeaders() {
+        this.element.querySelector('thead tr').innerHTML = '';
+
+        this.headers.forEach(header => {
+            this.element.querySelector('thead tr').innerHTML = `<tr>${header}</tr>`;
+        });
+    }
+    renderRows() {}
+    renderPagesButtons() {}
+    renderHeadersButtons() {}
+    renderHeadersSearch() {}
+    renderSelectEntries() {}
+
+}
