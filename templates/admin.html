@@ -2,10 +2,10 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Adminsitración Arioli</title>
+    <title>Administración Arioli</title>
     <!-- BOOTSTRAP 4 CDN -->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
-    <script src="/static/js/admin.js"></script>
+    <script src="static/js/admin.js"></script>
     <script src="{{ url_for('static', filename='js/bootstrap.bundle.js') }}"></script>
     <!-- CUSTOM CSS -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -56,7 +56,6 @@
             </tr>
         </tbody>
     </table>
-
 
     <script>
         const dt = new DataTable('#datatable', [{

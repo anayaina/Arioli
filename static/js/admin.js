@@ -61,9 +61,9 @@ class DataTable {
 
     makeTable() {
         this.copyItems = [...this.items];
-        this.initpagination(this.items.length, this.numberOfEntries);
+        this.initPagination(this.items.length, this.numberOfEntries);
 
-        const container = docuemnt.createElement('div');
+        const container = document.createElement('div');
         container.id = this.element.id;
         this.element.innerHTML = '';
         this.element.replaceWith(container);
@@ -84,7 +84,7 @@ class DataTable {
         this.pagination.noPages = Math.ceil(this.pagination.total / this.pagination.noItemsPerPage);
         this.pagination.actual = 1;
         this.pagination.pointer = 0;
-        this.pagination.diff = this.paginations.noItemsPerPage - (this.pagination.total % this.pagination.noItemsPerPage);
+        this.pagination.diff = this.pagination.noItemsPerPage - (this.pagination.total % this.pagination.noItemsPerPage);
     }
 
     generateUUID() {
@@ -130,7 +130,40 @@ class DataTable {
             this.element.querySelector('thead tr').innerHTML = `<tr>${header}</tr>`;
         });
     }
-    renderRows() {}
+    renderRows() {
+        this.element.querySelector('tbody').innerHTML = '';
+
+        let i = 0;
+        const { pointer, total } = this.pagination;
+        const limit = this.pagination.actual * this.pagination.noItemsPerPage;
+
+        for (i = pointer; i < limit; i++) {
+            if (i == total) break;
+
+            const { id, values } = this.copyItems[i];
+            const checked = this.isChecked(id);
+            let data = '';
+
+            data += `<td class="table-checkbox">
+                        <input type="checkbox" class="datatable-checkbox" data-id="${id}" ${checked? "checked" : ""}</input>
+                    </td>`;
+            values.forEach(cell => {
+                data += `<td>${cell}</td>`;
+            });
+            this.element.querySelector('tbody').innerHTML = `<tr>${data}</tr>`;
+        }
+    }
+    isChecked() {
+        const items = this.selected;
+        let res = false;
+
+        if (items.length == 0) return false;
+
+        items.forEach(item => {
+            if (item.id == id) res = true;
+        });
+        return res;
+    }
     renderPagesButtons() {}
     renderHeadersButtons() {}
     renderHeadersSearch() {}
