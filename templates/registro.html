@@ -91,6 +91,9 @@
                     <!-- Boton Sign up -->
                     <input type="submit" id="register" class="btn btn-danger" value="Crear Cuenta">
                   </form>
+                  {% if error %}
+                      <p class="error"><strong>Error:</strong> {{ error }}</p>
+                  {% endif %}
                 </div>
               </div>
             </div>
