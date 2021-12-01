@@ -10,64 +10,12 @@
     <!-- CUSTOM CSS -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/admin.css') }}">
+    <link rel="shortcut icon" href="#" />
 </head>
 
 <body>
     <br><br>
 
-    <table id="datatable" class="datatable">
-        <thead>
-            <tr>
-                <th></th>
-                <th>DISPONIBILIDAD</th>
-                <th>PRODUCTO</th>
-                <th>INSUMO</th>
-                <th>PROVEEDOR</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <th class="table-checkbox"><input type="checkbox"></th>
-                <td><span class="available"></span></td>
-                <td>Galletas del Pueblo</td>
-                <td>Manteca Vegetal</td>
-                <td>SuperMC</td>
-            </tr>
-            <tr>
-                <th class="table-checkbox"><input type="checkbox"></th>
-                <td><span class="offline"></span></td>
-                <td>Galletas del Pueblo</td>
-                <td>Harina Los Gallos</td>
-                <td>SuperMC</td>
-            </tr>
-            <tr>
-                <th class="table-checkbox"><input type="checkbox"></th>
-                <td><span class="offline"></span></td>
-                <td>Barbacoa</td>
-                <td>Chile Colorado</td>
-                <td>SuperMC</td>
-            </tr>
-            <tr>
-                <th class="table-checkbox"><input type="checkbox"></th>
-                <td><span class="available"></span></td>
-                <td>Barbacoa</td>
-                <td>Chile Pasilla</td>
-                <td>SuperMC</td>
-            </tr>
-        </tbody>
-    </table>
-
-    <script>
-        const dt = new DataTable('#datatable', [{
-            id: 'bAdd',
-            text: 'agregar',
-            icon: 'add_circle',
-            action: function() {
-
-            }
-        }]);
-        dt.parse();
-    </script>
 
 </body>
 
