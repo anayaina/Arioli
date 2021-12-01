@@ -20,16 +20,16 @@
             <td>
                 <form onsubmit="event.preventDefault();onFormSubmit();" autocomplete="off">
                     <div>
-                        <label>PRODUCTO</label><label class="validation-error hide" id="fullNameValidationError">This field is required.</label>
-                        <input type="text" name="fullName" id="fullName">
+                        <label>PRODUCTO</label><label class="validation-error hide" id="productoValidationError">*Este Campo es Obligatorio.</label>
+                        <input type="text" name="producto" id="producto">
                     </div>
                     <div>
-                        <label>INSUMO</label>
-                        <input type="text" name="empCode" id="empCode">
+                        <label>INSUMO</label><label class="validation-error hide" id="insumoValidationError">*Este Campo es Obligatorio.</label>
+                        <input type="text" name="insumo" id="insumo">
                     </div>
                     <div>
-                        <label>PROVEEDOR</label>
-                        <input type="text" name="salary" id="salary">
+                        <label>PROVEEDOR</label><label class="validation-error hide" id="provValidationError">*Este Campo es Obligatorio.</label>
+                        <input type="text" name="prov" id="prov">
                     </div>
                     <div class="form-action-buttons">
                         <input type="submit" value="Añadir">
@@ -47,7 +47,6 @@
                         </tr>
                     </thead>
                     <tbody>
-
                     </tbody>
                 </table>
             </td>
