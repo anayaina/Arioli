@@ -8,6 +8,7 @@ import secrets
 app = Flask(__name__)
 app.secret_key = secrets.token_hex(16)
 app.config['DEBUG'] = True
+categorias=['Argentina', 'China','Mexicana','Sonora','Saludable','Italiana','Japonesa', 'Regional','Navideño','Integral','Parrilladas','Repostería','Tailandesa','Taquiza','Panadería']
 
 #abrir diccionario usuarios
 with open('static/usuarios/usuarios.json') as f:
