@@ -397,8 +397,8 @@ def insertarProductoAlCarrito(carrito,productId,email):
             carrito[productId] = [1, dict_productos[productId]]
         else:
             carrito[productId][0] += 1
-
-        dict_usuarios[email]["carrito"] = carrito
+    
+    dict_usuarios[email]["carrito"] = carrito
 
     #realizamos la escritura
     with open('static/usuarios/usuarios.json', 'w') as fp:
