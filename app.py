@@ -30,6 +30,7 @@ def productos():
     productos, categories = None, None
     if 'username' in session:
         user = session['username']
+        email = session['email'] 
     if request.method == 'POST':
         if request.form['boton'] == 'Buscar':
             category = request.form['category']
@@ -38,6 +39,10 @@ def productos():
                 return render_template('products.html',username=user,productos=resultado, categories=categorias)
             return render_template('products.html', productos=resultado, categories=categorias)
         else:
+            producto = request.form['boton']
+            dict_usuarios[email]['carrito'].append(producto)
+            with open('static/usuarios/usuarios.json', 'w') as fp:
+                json.dump(dict_usuarios, fp)
             return render_template('products.html',username=user,productos=dict_productos, categories=categorias, error="Producto añadido al carrito.")
     else:
         if 'username' in session:
@@ -133,12 +138,13 @@ def registro():
         dict_usuarios[email]['name'] = name
         dict_usuarios[email]['surname'] = surname
         dict_usuarios[email]['password'] = password
-        dict_usuarios[email]['carrito'] = None
+        dict_usuarios[email]['carrito'] = []
         dict_usuarios[email]['pedido'] = None
         dict_usuarios[email]['admin'] = False
         with open('static/usuarios/usuarios.json', 'w') as fp:
                 json.dump(dict_usuarios, fp)
         session['username'] = name
+        session['email'] = email
         return redirect('/')
     return render_template('registro.html')
 
