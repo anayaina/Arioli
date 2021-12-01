@@ -20,11 +20,11 @@ class DataTable {
             actual: 0,
             pointer: 0,
             diff: 0,
-            lastpagebeforedots: 0,
-            nobuttonsbeforedots: 4
+            lastPageBeforeDots: 0,
+            noButtonsBeforeDots: 4
         }
         this.selected = [];
-        this.numberentries = [];
+        this.numberOfEntries = 5;
         this.headerButtons = headerButtons;
     }
 
@@ -44,8 +44,10 @@ class DataTable {
             };
             cells.forEach(cell => {
                 if (cell.children.length > 0) {
-                    const status = [...cell.children][0].getAttribute('class');
-                    if (status != null) {
+                    //const status = [...cell.children][0].getAttribute('class');
+                    const statusElement = [...cell.children][0];
+                    const status = statusElement.getAttribute('class');
+                    if (status !== null) {
                         item.values.push(`<span class='${status}'></span>`);
                     }
                 } else {
@@ -61,26 +63,24 @@ class DataTable {
 
     makeTable() {
         this.copyItems = [...this.items];
-        this.initPagination(this.items.length, this.numberOfEntries);
+
+        this.initPagination(this.item.lengt, this.numberOfEntries);
 
         const container = document.createElement('div');
         container.id = this.element.id;
         this.element.innerHTML = '';
         this.element.replaceWith(container);
-        this.element = container;
+
 
         this.createHTML();
         this.renderHeaders();
-        this.renderRows();
+        this.rendererRows();
         this.renderPagesButtons();
-        this.renderHeadersButtons();
-        this.renderHeadersSearch();
-        this.renderSelectEntries();
     }
 
     initPagination(total, entries) {
-        this.pagination, total = total;
-        this.pagination.noItemsPerPage = entries;
+        this.pagination.total = total;
+        this.pagination.noItemsPerPage = entries.length;
         this.pagination.noPages = Math.ceil(this.pagination.total / this.pagination.noItemsPerPage);
         this.pagination.actual = 1;
         this.pagination.pointer = 0;
@@ -88,85 +88,6 @@ class DataTable {
     }
 
     generateUUID() {
-        return (Date.now() * Math.floor(Math.random() * 100000)).toString();
+        return (Date.now() * Math.floor(Math.random() * 1000000)).toString;
     }
-
-    createHTML() {
-        this.element.innerHTML = `
-        <div class = "datatable-container">
-            <div class = "header-tools">
-                <div class = "tools">
-                    <ul class"header-buttons-container"></ul>
-                </div>
-            </div>
-            <div class="search">
-                <input type="text" class="search-input">
-            </div>
-        </div>
-        <table class="databale">
-            <thead>
-                <tr>
-                </tr>
-            </thead>
-            <tbody>
-            </body>
-        </table>
-        <div class="footer-tools">
-            <div class="list-items">
-                Mostar 
-                <select name="n-enries" id="n-enries" class="n-enries"></select>
-            </div>
-            <div class="pages">
-            </div>
-        </div>
-    </div> 
-    `;
-    }
-
-    renderHeaders() {
-        this.element.querySelector('thead tr').innerHTML = '';
-
-        this.headers.forEach(header => {
-            this.element.querySelector('thead tr').innerHTML = `<tr>${header}</tr>`;
-        });
-    }
-    renderRows() {
-        this.element.querySelector('tbody').innerHTML = '';
-
-        let i = 0;
-        const { pointer, total } = this.pagination;
-        const limit = this.pagination.actual * this.pagination.noItemsPerPage;
-
-        for (i = pointer; i < limit; i++) {
-            if (i == total) break;
-
-            const { id, values } = this.copyItems[i];
-            const checked = this.isChecked(id);
-            let data = '';
-
-            data += `<td class="table-checkbox">
-                        <input type="checkbox" class="datatable-checkbox" data-id="${id}" ${checked? "checked" : ""}</input>
-                    </td>`;
-            values.forEach(cell => {
-                data += `<td>${cell}</td>`;
-            });
-            this.element.querySelector('tbody').innerHTML += `<tr>${data}</tr>`;
-        }
-    }
-    isChecked() {
-        const items = this.selected;
-        let res = false;
-
-        if (items.length == 0) return false;
-
-        items.forEach(item => {
-            if (item.id == id) res = true;
-        });
-        return res;
-    }
-    renderPagesButtons() {}
-    renderHeadersButtons() {}
-    renderHeadersSearch() {}
-    renderSelectEntries() {}
-
 }
