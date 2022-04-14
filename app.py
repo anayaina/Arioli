@@ -18,6 +18,33 @@ with open('static/usuarios/usuarios.json') as f:
 with open('static/Productos/productos.json') as f:
     dict_productos = json.load(f)
 
+
+def insertarProductoAlCarrito(carrito,productId,email):
+    #verificamos si el carrito esta vacio
+    if carrito is None or len(carrito) == 0:
+        carrito = dict()
+        carrito[productId] = [1, dict_productos[productId]]
+    else:  # si ya tiene elementos
+        if productId not in dict_usuarios:  # si aun no está el producto en el carrito
+            carrito[productId] = [1, dict_productos[productId]]
+        else:
+            carrito[productId][0] += 1
+    
+    dict_usuarios[email]["carrito"] = carrito
+
+    #realizamos la escritura
+    with open('static/usuarios/usuarios.json', 'w') as fp:
+        json.dump(dict_usuarios, fp)
+
+def actualizarArchivo(diccionarioUsuario,diccionarioArchivo):
+    #juntamos los diccionarios
+    diccionarioArchivo.update(diccionarioUsuario)
+            
+    #metemos los datos al json
+    with open('static/usuarios/usuarios.json',"w") as outfile:  #abrimos el archivo e indicamos que vamos a escribir en él
+        json.dump(diccionarioArchivo,outfile)
+
+
 @app.route('/',methods=['GET','POST'])
 def principal():
     if 'username' in session:
@@ -392,28 +419,3 @@ def admin():
 
 if __name__ == '__main__':
     app.run(debug=True)
-
-def insertarProductoAlCarrito(carrito,productId,email):
-    #verificamos si el carrito esta vacio
-    if carrito is None or len(carrito) == 0:
-        carrito = dict()
-        carrito[productId] = [1, dict_productos[productId]]
-    else:  # si ya tiene elementos
-        if productId not in dict_usuarios:  # si aun no está el producto en el carrito
-            carrito[productId] = [1, dict_productos[productId]]
-        else:
-            carrito[productId][0] += 1
-    
-    dict_usuarios[email]["carrito"] = carrito
-
-    #realizamos la escritura
-    with open('static/usuarios/usuarios.json', 'w') as fp:
-        json.dump(dict_usuarios, fp)
-
-def actualizarArchivo(diccionarioUsuario,diccionarioArchivo):
-    #juntamos los diccionarios
-    diccionarioArchivo.update(diccionarioUsuario)
-            
-    #metemos los datos al json
-    with open('static/usuarios/usuarios.json',"w") as outfile:  #abrimos el archivo e indicamos que vamos a escribir en él
-        json.dump(diccionarioArchivo,outfile)
